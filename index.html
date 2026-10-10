@@ -265,11 +265,14 @@ footer a{color:var(--gold-soft);font-weight:600}
   .cta .btn,.dcta .btn{width:100%;justify-content:center;margin:6px 0}
   .about .frame img{aspect-ratio:1/1}
   .contact .frame{max-width:280px;margin:0 auto}
-  /* posuvné kartičky namiesto dlhého zoznamu */
-  .cards,.steps,.dgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:2rem -18px 0;padding:4px 18px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .cards::-webkit-scrollbar,.steps::-webkit-scrollbar,.dgrid::-webkit-scrollbar{display:none}
-  .cards>*,.steps>*,.dgrid>*{flex:0 0 82%;scroll-snap-align:start}
-  .swipe{display:block!important}
+  /* kartičky dva vedľa seba (ako sekcia Cesta) */
+  .cards,.steps,.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.8rem}
+  .card,.step,.doubt{padding:16px 14px;border-radius:18px}
+  .card .ic{width:32px;height:32px;border-radius:10px;font-size:.8rem;margin-bottom:10px}
+  .card h3,.step h3{font-size:.95rem;line-height:1.25}
+  .doubt h3{font-size:.92rem;line-height:1.3}
+  .card p,.step p,.doubt p{font-size:.8rem;line-height:1.5}
+  .step::before{font-size:1.6rem;margin-bottom:.5rem}
   /* album v dvoch stĺpcoch */
   .grid{columns:2;column-gap:10px}
   .grid figure{margin-bottom:10px;border-radius:14px}
@@ -375,7 +378,6 @@ footer a{color:var(--gold-soft);font-weight:600}
       <h2>Dove sogni e visione <em>diventano realtà.</em></h2>
       <p class="sub">Smetti di guardare solo la vita degli altri e inizia a costruire la tua. Un business online in cui ti formi, cresci come persona e passo dopo passo costruisci la tua indipendenza.</p>
     </div>
-    <p class="swipe">Scorri di lato →</p>
     <div class="cards">
       <div class="card reveal"><span class="ic">01</span><h3>Business online</h3><p>Lavori dal telefono o dal portatile – accanto al tuo lavoro, con i tuoi tempi, da dove vuoi.</p></div>
       <div class="card reveal"><span class="ic">02</span><h3>Educazione finanziaria</h3><p>Capisci come funzionano i soldi, gli investimenti e il trading – rischi compresi.</p></div>
@@ -430,7 +432,6 @@ footer a{color:var(--gold-soft);font-weight:600}
       <h2>Passo dopo <em>passo.</em></h2>
       <p class="sub">Dal primo messaggio fino ai tuoi primi obiettivi – sai cosa ti aspetta.</p>
     </div>
-    <p class="swipe">Scorri di lato →</p>
     <div class="steps">
       <div class="step reveal"><h3>Chiacchierata conoscitiva</h3><p>Mi scrivi su WhatsApp e vediamo da dove parti e cosa cerchi. Se non fa per te, te lo dico sinceramente.</p></div>
       <div class="step reveal"><h3>Piano su misura</h3><p>In base al tuo tempo e ai tuoi obiettivi impostiamo un piano chiaro e semplice.</p></div>
@@ -448,7 +449,6 @@ footer a{color:var(--gold-soft);font-weight:600}
       <h2>Guardi i miei video, ma <em>non mi hai ancora scritto?</em></h2>
       <p class="sub">Ti capisco. Anch'io un tempo guardavo gli altri e mi dicevo „forse un giorno“. Queste sono le domande che mi facevo anch'io – con risposte sincere.</p>
     </div>
-    <p class="swipe">Scorri di lato →</p>
     <div class="dgrid">
       <div class="doubt reveal"><h3>„Non ho nessuna esperienza.“</h3><p>Nemmeno io. Ho iniziato a 30 anni da zero. Impari passo dopo passo, con il team e con il supporto – nessuno si aspetta che tu sappia tutto subito.</p></div>
       <div class="doubt reveal"><h3>„Non ho tempo.“</h3><p>Ho iniziato accanto al lavoro, stanca dopo i turni. È tutto online e lo adatti ai tuoi ritmi.</p></div>
