@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A che punto sei? Quiz veloce – Barbora Šmeringaiová</title>
+<meta name="description" content="Poche domande e ricevi il tuo risultato personale: da dove parti, cosa ti manca e quanto può darti mettere da parte con costanza.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A che punto sei? Quiz veloce">
+<meta property="og:description" content="Poche domande e ricevi il tuo risultato personale: da dove parti, cosa ti manca e quanto può darti mettere da parte con costanza.">
+<meta property="og:image" content="https://barboras22.github.io/barborasmeringai/quiz-anteprima.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://barboras22.github.io/barborasmeringai/quiz.html">
+<link rel="alternate" hreflang="sk" href="https://barboras22.github.io/barborasmeringaiova/kviz.html">
+<link rel="alternate" hreflang="it" href="https://barboras22.github.io/barborasmeringai/quiz.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --em-900:#1F1E1B; --em-700:#2D2C29; --em-500:#42413E; --em-300:#AEADAA;
+  --sage-50:#EEEDEA; --sage-100:#E5E4E1; --sage-200:#D7D6D3; --sage-300:#C6C5C2;
+  --gold:#B8954E; --gold-soft:#E2CC97;
+  --ink:#282724; --soft:#6D6C69; --white:#FFFEFB;
+  --line:rgba(59,58,55,.16); --line-dark:rgba(226,204,151,.3);
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--sage-100);color:var(--ink);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font);font-weight:800;line-height:1.08;letter-spacing:-.025em;color:var(--em-900)}
+h1{font-size:clamp(3rem,7vw,5.2rem)}
+h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:1rem}
+h3{font-size:1.18rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.4rem}
+em{font-style:normal;color:var(--em-500)}
+strong{font-weight:700}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.eyebrow{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--em-500);background:var(--sage-200);padding:6px 14px;border-radius:999px;margin-bottom:1.2rem}
+.sub{color:var(--soft);max-width:660px;font-size:1.05rem}
+.dark{background:var(--em-700);color:#EEEDEA}
+.dark h1,.dark h2,.dark h3{color:#fff}
+.dark em{color:var(--gold-soft)}
+.dark .eyebrow{background:rgba(255,255,255,.1);color:var(--gold-soft)}
+.dark .sub{color:#D4D3D0}
+
+.promo-bar{position:fixed;top:0;left:0;right:0;z-index:51;background:var(--gold);color:#fff;text-align:center;font-size:.78rem;font-weight:600;letter-spacing:.04em;padding:7px 12px}
+nav{position:fixed;top:32px;left:0;right:0;z-index:50;background:rgba(229,228,225,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;color:var(--em-900)}
+.links{display:flex;gap:24px;align-items:center;font-size:.88rem;font-weight:500;color:var(--soft)}
+.links a:hover{color:var(--em-700)}
+.ig{display:inline-flex;width:36px;height:36px;border-radius:50%;align-items:center;justify-content:center;border:1px solid var(--line)}
+.ig svg{width:17px;height:17px;fill:currentColor}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:999px;background:var(--em-700);color:#fff;font-size:.92rem;font-weight:700;transition:.25s;border:2px solid var(--em-700);cursor:pointer;font-family:var(--font)}
+.btn:hover{background:var(--em-900);border-color:var(--em-900);transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(43,42,39,.6)}
+.btn.gold{background:var(--gold);border-color:var(--gold)}
+.btn.gold:hover{background:#A6843F;border-color:#A6843F}
+.btn.ghost{background:transparent;color:var(--em-700);border-color:var(--em-300)}
+.btn.ghost:hover{border-color:var(--em-700);background:transparent;box-shadow:none}
+.dark .btn.ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.dark .btn.ghost:hover{border-color:#fff}
+.links .btn{padding:10px 20px;font-size:.84rem;color:#fff}
+
+/* HERO */
+.hero{padding:170px 0 100px;background:radial-gradient(circle at 85% 10%,rgba(226,204,151,.28),transparent 42%),linear-gradient(155deg,#373633 0%,var(--em-700) 55%,#272623 100%);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero .q{font-size:clamp(1.3rem,2.4vw,1.75rem);font-weight:600;color:var(--gold-soft);margin:.8rem 0 1.4rem;letter-spacing:-.01em}
+.hero p.lead{font-size:1.06rem;max-width:540px;color:#DEDDDA;margin-bottom:.9rem}
+.punch{background:rgba(255,255,255,.08);border-left:3px solid var(--gold-soft);border-radius:0 14px 14px 0;padding:16px 20px;max-width:540px;margin:1.6rem 0 2.2rem;color:#fff;font-weight:500}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.arch{border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 34px 70px -28px rgba(0,0,0,.55);border:8px solid rgba(255,255,255,.14);position:relative}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.badge{position:absolute;left:50%;transform:translateX(-50%);bottom:22px;background:var(--gold);color:#fff;padding:9px 20px;font-size:.78rem;font-weight:700;border-radius:999px;white-space:nowrap}
+
+.marquee{background:var(--em-900);color:#fff;overflow:hidden;white-space:nowrap;padding:18px 0;font-size:1.05rem;font-weight:700;letter-spacing:.02em}
+.marquee div{display:inline-block;animation:slide 32s linear infinite}
+.marquee span{margin:0 22px}
+.marquee b{color:var(--gold-soft)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ABOUT */
+.about{background:var(--sage-50)}
+.two{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.frame{border-radius:var(--r);overflow:hidden;box-shadow:0 30px 60px -32px rgba(43,42,39,.5)}
+.frame img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
+.about p{margin-bottom:1rem;color:var(--soft)}
+.about p strong{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:2rem}
+.stats div{background:var(--sage-100);border-radius:16px;padding:16px 18px}
+.stats strong{display:block;font-size:1.35rem;font-weight:800;color:var(--em-700);letter-spacing:-.02em}
+.stats span{font-size:.8rem;color:var(--soft)}
+
+/* BIZNIS */
+.mission{background:var(--sage-200)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:2.5rem}
+.card{background:var(--white);padding:28px 24px;border-radius:var(--r);transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -26px rgba(43,42,39,.5)}
+.card .ic{width:42px;height:42px;border-radius:12px;background:var(--sage-200);color:var(--em-700);display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px}
+.card p{font-size:.93rem;color:var(--soft)}
+.quote{font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:700;letter-spacing:-.02em;max-width:800px;margin:3.4rem auto 0;text-align:center;line-height:1.35;color:var(--em-900)}
+.quote span{color:var(--gold)}
+
+.fair{margin-top:2.6rem;background:var(--em-700);color:#E1E0DD;border-radius:var(--r);padding:36px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
+.fair h3{color:#fff;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.25;margin-bottom:.8rem}
+.fair h3 em{color:var(--gold-soft)}
+.mission .fair .eyebrow{background:rgba(255,255,255,.1);color:var(--gold-soft)}
+.fair p strong{color:#fff}
+.fair ul{list-style:none;display:grid;gap:10px}
+.fair li{background:rgba(255,255,255,.08);border-radius:14px;padding:12px 16px;display:flex;align-items:center;gap:14px}
+.fair li b{font-size:1.35rem;font-weight:800;color:var(--gold-soft);min-width:72px;letter-spacing:-.02em}
+.fair li span{font-size:.9rem}
+@media(max-width:900px){.fair{grid-template-columns:1fr;padding:26px}}
+
+.partner{margin-top:1.4rem;background:var(--white);border-radius:var(--r);padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border:1.5px solid color-mix(in srgb,var(--gold) 45%,transparent)}
+.partner p{color:var(--soft);font-size:.95rem;max-width:600px}
+.partner p strong{color:var(--ink)}
+.partner .pl{display:flex;gap:10px;flex-wrap:wrap}
+.partner .pl a{padding:11px 20px;font-size:.85rem}
+
+/* CESTA */
+.journey{background:var(--sage-50)}
+.jgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:2.8rem}
+.jgrid figure{background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:0 18px 40px -30px rgba(43,42,39,.45)}
+.jgrid img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
+.jgrid figcaption{padding:18px 20px 22px;font-size:.92rem;color:var(--soft)}
+.jgrid figcaption b{display:block;font-size:1.02rem;font-weight:800;color:var(--ink);margin-bottom:4px}
+.jgrid figure.today{background:var(--em-700);color:#E1E0DD}
+.jgrid figure.today figcaption{color:#E1E0DD}
+.jgrid figure.today b{color:var(--gold-soft)}
+
+/* KROKY */
+.path{background:var(--sage-100)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:2.8rem;counter-reset:s}
+.step{background:var(--white);border-radius:var(--r);padding:28px 24px}
+.step::before{counter-increment:s;content:"0" counter(s);font-size:2.2rem;font-weight:800;color:var(--gold);display:block;line-height:1;margin-bottom:.8rem;letter-spacing:-.03em}
+.step p{font-size:.93rem;color:var(--soft)}
+
+/* VÁHAŠ */
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:2.6rem}
+.doubt{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:26px}
+.doubt h3{color:var(--gold-soft)}
+.doubt p{font-size:.95rem;color:#DEDDDA}
+.deal{margin-top:2.4rem;background:var(--white);color:var(--ink);border-radius:var(--r);padding:34px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.deal .pct{display:flex;gap:10px}
+.deal .pct div{text-align:center;border-radius:18px;padding:16px 18px;min-width:110px}
+.deal .pct div:first-child{background:var(--sage-200)}
+.deal .pct div:last-child{background:var(--gold);color:#fff}
+.deal .pct strong{display:block;font-size:2.2rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.deal .pct span{font-size:.75rem;font-weight:600}
+.dark .deal h3{font-size:1.35rem;color:var(--em-900)}
+.mission .eyebrow,.inquiry .eyebrow{background:var(--white)}
+.deal p{color:var(--soft)}
+.dcta{text-align:center;margin-top:3rem}
+.dcta p{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:700;color:#fff;margin-bottom:1.4rem;letter-spacing:-.01em}
+.dcta .btn{margin:6px}
+
+/* ALBUM */
+.album{background:var(--em-900)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:1.8rem 0 2rem}
+.tab{padding:9px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#DEDDDA;font:600 .85rem var(--font);cursor:pointer;transition:.25s}
+.tab:hover{border-color:var(--gold-soft)}
+.tab.on{background:var(--gold-soft);color:var(--em-900);border-color:var(--gold-soft)}
+.grid{columns:3;column-gap:16px}
+.grid figure{break-inside:avoid;margin-bottom:16px;border-radius:18px;overflow:hidden;position:relative;cursor:zoom-in;background:var(--em-700)}
+.grid figure.hide{display:none}
+.grid img{width:100%;height:auto;transition:transform .6s}
+.grid figure:hover img{transform:scale(1.04)}
+.grid figcaption{padding:14px 16px 16px;font-size:.88rem;color:#E1E0DD;line-height:1.55}
+.lb{position:fixed;inset:0;background:rgba(14,13,10,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+.lb.open{display:flex}
+.lb img{max-height:80vh;max-width:92vw;border-radius:14px}
+.lb p{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#EFEEEB;font-size:.95rem;padding:0 24px;max-width:760px;margin:0 auto}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:2.4rem;cursor:pointer;padding:12px 18px}
+.lb .x{top:10px;right:14px}.lb .pv{left:8px;top:50%}.lb .nx{right:8px;top:50%}
+
+/* PROMO */
+.promo-sec{background:var(--sage-100)}
+.promo{position:relative;overflow:hidden;text-align:center;border-radius:28px;padding:60px 28px;background:linear-gradient(140deg,#373633,var(--em-700));color:#E1E0DD}
+.promo h2{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem)}
+.promo h2 em{color:var(--gold-soft)}
+.promo p{max-width:560px;margin:0 auto 2rem}
+.promo .eyebrow{background:rgba(255,255,255,.12);color:var(--gold-soft)}
+.cd{display:flex;justify-content:center;gap:12px;margin-bottom:2.2rem;flex-wrap:wrap}
+.cd div{background:rgba(255,255,255,.1);border-radius:16px;padding:14px 16px;min-width:84px}
+.cd b{display:block;font-size:2.2rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em}
+.cd small{font-size:.72rem;font-weight:600;color:var(--gold-soft)}
+.ended{display:none}
+.offer{display:flex;justify-content:center;align-items:center;gap:14px;margin:0 auto 1.8rem;flex-wrap:wrap}
+.offer>div:not(.or){background:var(--gold);color:#fff;border-radius:18px;padding:18px 26px;min-width:170px}
+.offer strong{display:block;font-size:1.7rem;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.offer span{font-size:.85rem;font-weight:600;opacity:.9}
+.offer .or{font-weight:700;color:var(--gold-soft)}
+
+/* FORMULÁR */
+.inquiry{background:var(--sage-200)}
+.inquiry .two{align-items:start}
+.inquiry .two>div>p{color:var(--soft);margin-bottom:1rem}
+form{background:var(--white);padding:34px;border-radius:24px;box-shadow:0 30px 60px -38px rgba(43,42,39,.55);display:grid;gap:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-size:.8rem;font-weight:700;color:var(--ink);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px 15px;border:1.5px solid var(--sage-300);border-radius:12px;background:var(--sage-50);font:400 1rem var(--font);color:var(--ink);outline:none;transition:.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--em-500);background:#fff}
+textarea{min-height:100px;resize:vertical}
+.chk{display:flex;gap:10px;align-items:flex-start}
+.chk input{width:auto;margin-top:5px;accent-color:var(--em-700)}
+.chk span{font-weight:400;color:var(--soft);font-size:.82rem}
+.note{font-size:.82rem;color:var(--soft)}
+
+/* KONTAKT */
+.contact{background:var(--sage-50)}
+.contact .frame img{aspect-ratio:1/1;object-position:50% 40%}
+.chan{display:grid;gap:12px;margin:1.6rem 0 2rem}
+.chan a{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-radius:16px;background:var(--white);font-weight:700;transition:.25s;box-shadow:0 10px 30px -24px rgba(43,42,39,.5)}
+.chan a:hover{transform:translateX(4px);background:var(--em-700);color:#fff}
+.chan small{font-size:.85rem;font-weight:500;color:var(--em-500)}
+.chan a:hover small{color:var(--gold-soft)}
+
+footer{padding:44px 0 96px;font-size:.8rem;color:#CBCAC7;background:var(--em-900)}
+footer p{max-width:820px;margin-bottom:.7rem}
+footer .en{color:#fff;font-weight:600}
+footer a{color:var(--gold-soft);font-weight:600}
+
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -10px rgba(0,0,0,.45)}
+.wa svg{width:28px;height:28px;fill:#fff}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  section{padding:68px 0}
+  .hero .wrap,.two{grid-template-columns:1fr;gap:40px}
+  .hero{padding-top:140px}
+  .arch{max-width:340px;margin:0 auto}
+  .cards,.steps,.jgrid{grid-template-columns:1fr 1fr}
+  .grid{columns:2}
+  .links a:not(.btn):not(.ig){display:none}
+  .deal{grid-template-columns:1fr}
+}
+@media(max-width:560px){.cards,.steps,.dgrid,.row{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr 1fr;gap:8px}.stats div{padding:12px}.stats strong{font-size:1.05rem}.jgrid{grid-template-columns:1fr 1fr;gap:12px}.jgrid figcaption{padding:12px 12px 16px;font-size:.82rem}.grid{columns:1}form{padding:22px}.promo-bar{font-size:.7rem;line-height:1.4}.logo{font-size:.95rem;line-height:1.2}.hero{padding-top:150px}.deal{padding:24px}.deal .pct div{min-width:0;flex:1}}
+
+/* ===== TABLET (iPad) ===== */
+@media(min-width:700px) and (max-width:900px){
+  .hero .wrap{grid-template-columns:1.15fr .85fr;gap:32px}
+  .two{grid-template-columns:.85fr 1.15fr;gap:36px}
+  .arch{max-width:none;margin:0}
+  .hero{padding-top:150px}
+  .grid{columns:3}
+  .contact .frame img{aspect-ratio:4/5}
+  .jgrid{grid-template-columns:repeat(4,1fr);gap:14px}
+  .jgrid figcaption{padding:12px 12px 16px;font-size:.82rem}
+  .about .two{align-items:start}
+  .about .frame{position:sticky;top:120px}
+}
+/* ===== MOBIL ===== */
+@media(max-width:600px){
+  section{padding:56px 0}
+  .wrap{padding:0 18px}
+  h1{font-size:2.7rem}
+  h2{font-size:1.75rem}
+  .hero .wrap{display:flex;flex-direction:column;gap:26px}
+  .hero .arch{order:-1;max-width:240px;margin:0 auto;border-width:6px}
+  .badge{font-size:.68rem;padding:7px 14px;bottom:14px}
+  .hero .q{font-size:1.2rem}
+  .hero p.lead{font-size:.98rem}
+  .cta{flex-direction:column}
+  .cta .btn,.dcta .btn{width:100%;justify-content:center;margin:6px 0}
+  .about .frame img{aspect-ratio:1/1}
+  .contact .frame{max-width:280px;margin:0 auto}
+  /* kartičky dva vedľa seba (ako sekcia Cesta) */
+  .cards,.steps,.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.8rem}
+  .card,.step,.doubt{padding:16px 14px;border-radius:18px}
+  .card .ic{width:32px;height:32px;border-radius:10px;font-size:.8rem;margin-bottom:10px}
+  .card h3,.step h3{font-size:.95rem;line-height:1.25}
+  .doubt h3{font-size:.92rem;line-height:1.3}
+  .card p,.step p,.doubt p{font-size:.8rem;line-height:1.5}
+  .step::before{font-size:1.6rem;margin-bottom:.5rem}
+  /* album v dvoch stĺpcoch */
+  .grid{columns:2;column-gap:10px}
+  .grid figure{margin-bottom:10px;border-radius:14px}
+  .grid figcaption{font-size:.74rem;padding:9px 10px 11px;line-height:1.45}
+  .tabs{gap:6px}.tab{padding:7px 14px;font-size:.78rem}
+  /* promo */
+  .promo{padding:40px 18px;border-radius:22px}
+  .offer{gap:8px;flex-wrap:nowrap}
+  .offer>div:not(.or){min-width:0;flex:1;padding:14px 8px}
+  .offer strong{font-size:1.2rem}
+  .offer .or{font-size:.85rem}
+  .cd{gap:8px;flex-wrap:nowrap}
+  .cd div{min-width:0;flex:1;padding:10px 4px}
+  .cd b{font-size:1.6rem}
+  /* bloky */
+  .fair,.deal{padding:22px}
+  .fair li b{min-width:58px;font-size:1.15rem}
+  .partner{padding:20px}
+  .partner .pl{width:100%}.partner .pl a{flex:1;justify-content:center}
+  .quote{font-size:1.2rem}
+  .row{grid-template-columns:1fr 1fr;gap:10px}
+  .row:has(select){grid-template-columns:1fr}
+  form{padding:20px;gap:12px}
+  .wa{width:50px;height:50px;right:14px;bottom:14px}
+  .wa svg{width:24px;height:24px}
+}
+.swipe{display:none;font-size:.78rem;font-weight:600;color:var(--em-500);margin-top:.4rem}
+.dark .swipe{color:var(--gold-soft)}
+
+/* ===================== MRAMOR ===================== */
+:root{
+  --m-dark:url(images/marble-dark.jpg);
+  --m-light:url(images/marble-light.jpg);
+  --m-white:url(images/marble-white.jpg);
+  --brass:linear-gradient(135deg,#EDDAA8 0%,#D4B26C 38%,#B78D45 72%,#9C7737 100%);
+  --brass-line:rgba(214,184,120,.5);
+}
+/* tmavý kameň – Verde Alpi */
+.hero{background:radial-gradient(circle at 82% 12%,rgba(226,204,151,.22),transparent 40%),linear-gradient(155deg,rgba(61,60,57,.48),rgba(35,34,31,.74)),var(--m-dark) center/1100px}
+.doubts.dark{background:linear-gradient(rgba(45,44,41,.70),rgba(38,37,34,.80)),var(--m-dark) 30% 0/1000px}
+.album.dark{background:linear-gradient(rgba(31,30,27,.80),rgba(31,30,27,.86)),var(--m-dark) 70% 0/1000px}
+.marquee{background:linear-gradient(rgba(31,30,27,.55),rgba(31,30,27,.55)),var(--m-dark) 0 40%/800px;box-shadow:inset 0 1px 0 var(--brass-line),inset 0 -1px 0 var(--brass-line)}
+.marquee b{display:inline-block;width:7px;height:7px;transform:rotate(45deg);background:var(--brass);vertical-align:middle}
+footer{background:linear-gradient(rgba(24,23,20,.86),rgba(24,23,20,.90)),var(--m-dark) center/1000px;box-shadow:inset 0 1px 0 var(--brass-line)}
+/* svetlý kameň – celadon */
+.about,.journey,.contact{background:linear-gradient(rgba(241,240,237,.42),rgba(241,240,237,.42)),var(--m-light) 0 0/1000px}
+.mission,.inquiry{background:linear-gradient(rgba(215,214,211,.50),rgba(215,214,211,.50)),var(--m-light) 40% 0/1000px}
+.path,.promo-sec{background:linear-gradient(rgba(229,228,225,.48),rgba(229,228,225,.48)),var(--m-light) 80% 0/1000px}
+
+/* portrét v mramorovom oblúku */
+.arch{border:0;padding:12px;background:var(--m-white) 30% 20%/520px;box-shadow:0 34px 70px -28px rgba(0,0,0,.6),inset 0 0 0 1px rgba(197,155,69,.65)}
+.arch img{border-radius:999px 999px 16px 16px;box-shadow:0 0 0 1.5px #C9A24F}
+.badge{background:var(--brass);color:#1F1E1B;box-shadow:0 10px 22px -10px rgba(0,0,0,.55)}
+
+/* štítky nad nadpismi – zlatý kosoštvorec namiesto veľkých písmen */
+.eyebrow,.dark .eyebrow,.mission .eyebrow,.inquiry .eyebrow,.promo .eyebrow,.mission .fair .eyebrow{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px 10px;background:none;padding:0;border-radius:0;text-transform:none;letter-spacing:.01em;font-size:.9rem;font-weight:700;color:var(--em-500)}
+.eyebrow::before{content:"";width:8px;height:8px;transform:rotate(45deg);background:var(--brass);flex:none}
+.dark .eyebrow,.promo .eyebrow,.mission .fair .eyebrow{color:var(--gold-soft)}
+.eyebrow .sep{display:inline-block;width:5px;height:5px;transform:rotate(45deg);background:var(--brass);opacity:.85}
+
+/* kartičky – svetlé dlaždice so zlatou intarziou */
+.card,.step{border-radius:14px;border:1px solid rgba(184,149,78,.24);background:rgba(255,254,251,.94);box-shadow:0 22px 40px -32px rgba(31,30,27,.55)}
+.card .ic{width:22px;height:22px;border-radius:3px;transform:rotate(45deg);background:var(--m-white) center/160px;border:1.5px solid #C49A4E;margin:4px 0 20px 4px;box-shadow:0 4px 10px -4px rgba(31,30,27,.45)}
+.step::before{background:var(--brass);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats div{background:rgba(255,255,255,.55);border:1px solid rgba(184,149,78,.25);border-radius:12px}
+.doubt{border-radius:14px;background:rgba(21,20,17,.32);border-color:rgba(226,204,151,.22)}
+
+/* cesta */
+.jgrid figure{border-radius:16px;border:1px solid rgba(184,149,78,.24)}
+.jgrid figure.today{background:linear-gradient(rgba(45,44,41,.55),rgba(45,44,41,.55)),var(--m-dark) center/600px;border-color:rgba(226,204,151,.55)}
+
+/* bloky z kameňa */
+.fair{background:linear-gradient(rgba(45,44,41,.55),rgba(38,37,34,.72)),var(--m-dark) 20% 30%/900px;border:1px solid rgba(226,204,151,.35)}
+.fair li{background:rgba(255,255,255,.07);border:1px solid rgba(226,204,151,.16)}
+.partner{background:linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.35)),var(--m-white) 60% 40%/800px;border:1px solid rgba(197,155,69,.55)}
+.deal{position:relative;border-radius:18px;background:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),var(--m-white) 20% 60%/800px;border:1px solid rgba(197,155,69,.6)}
+.deal::after{content:"";position:absolute;inset:8px;border:1px solid rgba(197,155,69,.35);border-radius:12px;pointer-events:none}
+.deal .pct div:first-child{background:rgba(255,255,255,.78);border:1px solid rgba(197,155,69,.4)}
+.deal .pct div:last-child{background:var(--brass);color:#1F1E1B}
+.promo{background:radial-gradient(circle at 85% 0%,rgba(226,204,151,.22),transparent 45%),linear-gradient(140deg,rgba(61,60,57,.45),rgba(38,37,34,.70)),var(--m-dark) 60% 40%/900px;border:1px solid rgba(226,204,151,.55)}
+.promo::before{display:none}
+.promo::after{content:"";position:absolute;inset:10px;border:1px solid rgba(226,204,151,.3);border-radius:20px;pointer-events:none}
+.offer>div:not(.or){background:var(--brass);color:#1F1E1B}
+.cd div{background:rgba(255,255,255,.08);border:1px solid rgba(226,204,151,.25)}
+
+/* fotky s jemným zlatým rámikom */
+.frame{position:relative;border-radius:18px}
+.frame::after{content:"";position:absolute;inset:12px;border:1px solid rgba(240,226,190,.75);border-radius:10px;pointer-events:none}
+.grid figure{background:rgba(45,44,41,.92);border:1px solid rgba(226,204,151,.14)}
+
+/* zlato ako mosadz */
+.btn.gold{background:var(--brass);border-color:#C9A55C;color:#1F1E1B}
+.btn.gold:hover{background:var(--brass);border-color:#C9A55C;filter:brightness(1.06)}
+.promo-bar{background:var(--brass);color:#1F1E1B}
+.wa{background:var(--brass)}
+.wa svg{fill:#1F1E1B}
+.chan a{background:rgba(255,255,255,.86);border:1px solid rgba(184,149,78,.2)}
+form{border:1px solid rgba(184,149,78,.25);border-radius:20px}
+
+/* prístupnosť */
+a:focus-visible,.btn:focus-visible,button:focus-visible{outline:2px solid #D2B06A;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.marquee div{animation:none}}
+
+@media(max-width:600px){
+  .hero{background-size:auto,auto,760px}
+  .about,.journey,.contact,.mission,.inquiry,.path,.promo-sec,.doubts.dark,.album.dark,footer{background-size:auto,760px}
+  .hero .arch{padding:9px}
+  .arch img{border-radius:999px 999px 12px 12px}
+  .card .ic{width:16px;height:16px;margin:4px 0 14px 4px}
+  .promo::after{inset:8px;border-radius:15px}
+  .frame::after{inset:9px;border-radius:8px}
+  .deal::after{inset:6px;border-radius:12px}
+}
+
+/* ===== AKVAREL / DYM – jemné doladenie ===== */
+.hero{background:radial-gradient(circle at 82% 12%,rgba(226,204,151,.20),transparent 40%),linear-gradient(155deg,rgba(61,60,57,.22),rgba(35,34,31,.52)),var(--m-dark) center/1100px}
+.doubts.dark{background:linear-gradient(rgba(45,44,41,.50),rgba(38,37,34,.62)),var(--m-dark) 30% 0/1000px}
+.album.dark{background:linear-gradient(rgba(31,30,27,.66),rgba(31,30,27,.74)),var(--m-dark) 70% 0/1000px}
+.about,.journey,.contact{background:linear-gradient(rgba(246,245,242,.38),rgba(246,245,242,.38)),var(--m-light) 0 0/1000px}
+.about p,.journey .sub,.contact .sub,.mission .sub,.path .sub,.inquiry .two>div>p{color:#5E5D5A}
+@media(max-width:600px){
+  .hero{background-size:auto,auto,760px}
+  .about,.journey,.contact,.doubts.dark,.album.dark{background-size:auto,760px}
+}
+
+
+/* ===================== AKVARELOVÉ PRELIATIE FARIEB ===================== */
+/* --e = výška prelivu, --pe = odsadenie obsahu od hranice sekcií */
+:root{--pad:100px;--e:170px;--em:110px;--ew:1600px;--pe:calc(var(--pad) + var(--e)/2)}
+@media(max-width:900px){:root{--pad:84px;--e:150px;--em:100px;--ew:1400px}}
+@media(max-width:600px){:root{--pad:64px;--e:112px;--em:80px;--ew:1000px}}
+section{padding-top:var(--pe);padding-bottom:var(--pe)}
+.about{padding-top:calc(var(--em) + 30px)}
+.marquee,.mission,.path,.videos,.doubts.dark,.album.dark,.inquiry,footer{position:relative;z-index:2}
+/* pás pod hlavičkou sa vpíja do sekcie O mne */
+.marquee{padding-bottom:var(--em);margin-bottom:calc(-1*var(--em));box-shadow:inset 0 1px 0 var(--brass-line);
+  -webkit-mask:linear-gradient(#000,#000) top/100% calc(100% - var(--em) + 1px) no-repeat,url(images/blend-bottom.webp) bottom/var(--ew) var(--em) repeat-x;
+  mask:linear-gradient(#000,#000) top/100% calc(100% - var(--em) + 1px) no-repeat,url(images/blend-bottom.webp) bottom/var(--ew) var(--em) repeat-x}
+/* sekcie, ktoré sa prelievajú hore aj dole */
+.mission,.album.dark,.inquiry{margin-top:calc(-1*var(--e));margin-bottom:calc(-1*var(--e));
+  -webkit-mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) center/100% calc(100% - 2*var(--e) + 2px) no-repeat,url(images/blend-bottom.webp) bottom/var(--ew) var(--e) repeat-x;
+  mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) center/100% calc(100% - 2*var(--e) + 2px) no-repeat,url(images/blend-bottom.webp) bottom/var(--ew) var(--e) repeat-x}
+/* sekcie, ktoré sa prelievajú len hore */
+.path,.videos,.doubts.dark{margin-top:calc(-1*var(--e));
+  -webkit-mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat;
+  mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat}
+footer{margin-top:calc(-1*var(--e));padding-top:calc(var(--e) + 40px);box-shadow:none;
+  -webkit-mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat;
+  mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat}
+
+/* ===================== VIDEÁ ===================== */
+.videos{background:linear-gradient(rgba(215,214,211,.50),rgba(215,214,211,.50)),var(--m-light) 30% 0/1000px}
+.vgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-top:2.4rem}
+.vcard{margin:0;flex:0 1 380px;min-width:0;background:linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.35)),var(--m-white) 40% 30%/700px;border:1px solid rgba(197,155,69,.55);border-radius:20px;padding:12px;box-shadow:0 26px 50px -34px rgba(31,30,27,.6)}
+.vcard .instagram-media{margin:0!important;min-width:0!important;width:100%!important;max-width:100%!important;border-radius:12px!important;border:0!important;box-shadow:none!important}
+.vcard blockquote.instagram-media{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:440px;background:rgba(255,255,255,.88);padding:24px;text-align:center}
+.vcard blockquote.instagram-media a{display:inline-flex;flex-direction:column;align-items:center;gap:14px;color:#1F1E1B;font-weight:700;text-decoration:none}
+.vcard .play{width:56px;height:56px;border-radius:50%;background:var(--brass);position:relative;box-shadow:0 10px 22px -10px rgba(31,30,27,.6)}
+.vcard .play::after{content:"";position:absolute;left:22px;top:18px;border-left:17px solid #1F1E1B;border-top:10px solid transparent;border-bottom:10px solid transparent}
+.vmore{text-align:center;margin-top:2.2rem}
+
+/* ===================== JAZYKY ===================== */
+nav .links a.lang.lang{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);font-size:.8rem;font-weight:800;letter-spacing:.02em;color:var(--em-700);text-decoration:none;white-space:nowrap}
+nav .links a.lang.lang:hover{border-color:var(--em-500)}
+@media(max-width:820px){nav .links a.lang.lang{display:none}}
+.langtip{position:fixed;left:14px;bottom:14px;z-index:61;display:none;width:min(360px,calc(100% - 88px));background:var(--brass);color:#1F1E1B;border-radius:18px;padding:12px 42px 13px 14px;box-shadow:0 16px 36px -14px rgba(0,0,0,.55);font-size:.9rem;font-weight:700;line-height:1.35}
+.langtip.on{display:block;animation:tipIn .5s ease both}
+.langtip p{margin:0 0 10px}
+.langtip a{display:inline-block;background:#1F1E1B;color:#fff;border-radius:999px;padding:9px 15px;text-decoration:none;font-weight:700;font-size:.86rem}
+.langtip button{position:absolute;top:7px;right:7px;width:30px;height:30px;border-radius:50%;border:0;background:rgba(31,30,27,.12);color:#1F1E1B;font:700 1.15rem/1 var(--font);cursor:pointer}
+@keyframes tipIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.langtip.on{animation:none}}
+
+@media(max-width:600px){
+  .videos{background-size:auto,760px}
+  .vgrid{gap:18px}
+  .vcard{flex-basis:100%;padding:7px;border-radius:16px}
+  .vcard blockquote.instagram-media{min-height:380px}
+}
+
+/* ===================== POČET NÁVŠTEV ===================== */
+.visits{display:flex;align-items:flex-start;gap:10px;margin:22px 0 0;font-size:.92rem;line-height:1.5;color:#DEDDDA}
+.visits[hidden]{display:none}
+.visits b{color:#fff;font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+.visits .pulse{width:9px;height:9px;margin-top:.5em;border-radius:50%;background:#E2C27E;flex:none;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(226,194,126,.6)}75%,100%{box-shadow:0 0 0 10px rgba(226,194,126,0)}}
+@media (prefers-reduced-motion:reduce){.visits .pulse{animation:none}}
+
+/* ===================== JAZYK – VLAJKA AJ NA MOBILE ===================== */
+nav .links a.lang.lang .fl{font-size:1rem;line-height:1}
+@media(max-width:820px){
+  nav .links{gap:8px}
+  nav .links a.lang.lang{display:inline-flex;width:36px;padding:0;justify-content:center;border-color:rgba(184,149,78,.55);background:rgba(255,255,255,.55)}
+  nav .links a.lang.lang .lc{display:none}
+  nav .links a.lang.lang .fl{font-size:1.15rem}
+}
+@media(max-width:380px){.logo{font-size:.86rem}nav .links .btn{padding:10px 14px}}
+
+/* ===================== ČIERNO-BIELY MRAMOR ===================== */
+nav{background:rgba(248,247,244,.94)}
+em{color:#9A7A3E}
+.dark em,.fair h3 em,.promo h2 em{color:var(--gold-soft)}
+
+/* ===================== TEST: KDE SA NACHÁDZAŠ ===================== */
+.quiz{background:linear-gradient(rgba(238,237,234,.52),rgba(238,237,234,.52)),var(--m-light) 55% 0/1000px}
+.calc.dark{background:linear-gradient(rgba(45,44,41,.62),rgba(31,30,27,.74)),var(--m-dark) 60% 20%/1000px}
+.quiz,.calc.dark{position:relative;z-index:2;margin-top:calc(-1*var(--e));
+  -webkit-mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat;
+  mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat}
+.qcard{position:relative;max-width:760px;margin:2.4rem auto 0;border-radius:20px;padding:34px 36px 30px;
+  background:linear-gradient(rgba(255,255,255,.62),rgba(255,255,255,.62)),var(--m-white) 30% 50%/800px;border:1px solid rgba(197,155,69,.6);box-shadow:0 30px 60px -40px rgba(31,30,27,.55)}
+.qcard::after{content:"";position:absolute;inset:8px;border:1px solid rgba(197,155,69,.32);border-radius:14px;pointer-events:none}
+.qtop{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+.qprog{display:flex;align-items:center;gap:14px;padding-left:2px}
+.qprog i{width:11px;height:11px;transform:rotate(45deg);border:1.5px solid #B8954E;background:transparent;transition:background .3s}
+.qprog i.done{background:var(--brass)}
+.qprog i.now{box-shadow:0 0 0 4px rgba(214,178,108,.22)}
+.qstep{font-size:.84rem;font-weight:600;color:var(--soft)}
+.qq h3{font-size:clamp(1.25rem,2.4vw,1.55rem);line-height:1.25;margin:0 0 18px}
+.qopts{display:grid;gap:10px}
+.qopt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:15px 18px;border-radius:14px;cursor:pointer;
+  font:600 .98rem/1.4 var(--font);color:var(--ink);background:rgba(255,255,255,.82);border:1px solid rgba(184,149,78,.38);transition:border-color .2s,background .2s,transform .2s}
+.qopt::before{content:"";flex:none;width:10px;height:10px;transform:rotate(45deg);border:1.5px solid #B8954E;transition:background .2s}
+.qopt:hover{border-color:#B8954E;background:#fff}
+.qopt[aria-pressed="true"]{border-color:#B8954E;background:#F6EEDB}
+.qopt[aria-pressed="true"]::before{background:var(--brass)}
+.qopt:focus-visible{outline:2px solid #B8954E;outline-offset:2px}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:18px;min-height:24px}
+.qlink{background:none;border:0;padding:4px 0;font:600 .9rem var(--font);color:var(--soft);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.qlink:hover{color:var(--ink)}
+.qlink[hidden],.qnav[hidden]{display:none}
+.qres h3{font-size:clamp(1.45rem,3vw,1.95rem);line-height:1.2;margin:4px 0 12px}
+.qres .qkick{font-size:.84rem;font-weight:700;color:#9A7A3E;margin:0}
+.qres p{color:#4A4946;margin:0 0 14px}
+.qres ul{list-style:none;margin:6px 0 22px;padding:0;display:grid;gap:10px}
+.qres li{position:relative;padding-left:24px;color:#3A3936;font-size:.97rem}
+.qres li::before{content:"";position:absolute;left:3px;top:.55em;width:8px;height:8px;transform:rotate(45deg);background:var(--brass)}
+.qcta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.qfade{animation:qIn .35s ease both}
+@keyframes qIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ===================== KALKULAČKA ===================== */
+.ccard{margin-top:2.4rem;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:start;
+  border-radius:20px;padding:30px;background:rgba(18,17,15,.55);border:1px solid rgba(226,204,151,.32)}
+.cin label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:#D9D7D2;font-size:.95rem;font-weight:600;margin:0 0 10px}
+.cin output{color:#fff;font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+.cin input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;padding:0;margin:0 0 22px;border:0;background:transparent;cursor:pointer}
+.cin input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:999px;background:linear-gradient(90deg,#C9A55C 0 var(--p,30%),rgba(255,255,255,.18) var(--p,30%) 100%)}
+.cin input[type=range]::-moz-range-track{height:6px;border-radius:999px;background:rgba(255,255,255,.18)}
+.cin input[type=range]::-moz-range-progress{height:6px;border-radius:999px;background:#C9A55C}
+.cin input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;margin-top:-9px;border-radius:50%;background:var(--brass);border:3px solid #1F1E1B;box-shadow:0 0 0 1px rgba(226,204,151,.6)}
+.cin input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#D4B26C;border:3px solid #1F1E1B;box-shadow:0 0 0 1px rgba(226,204,151,.6)}
+.cin input[type=range]:focus-visible{outline:2px solid #D2B06A;outline-offset:4px;border-radius:8px}
+.cpaid{margin:4px 0 0;padding-top:16px;border-top:1px solid rgba(226,204,151,.22);color:#CFCDC8;font-size:.95rem}
+.cpaid b{display:block;color:#fff;font-size:1.7rem;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.cchart{margin:0;background:#1C1B19;border-radius:14px;padding:20px 20px 16px;position:relative}
+.cchart figcaption{color:#E9E7E2;font-weight:700;font-size:.98rem;margin:0 0 4px}
+.cchart .cunit{color:#A9A6A0;font-size:.82rem;margin:0 0 16px}
+.cplot{position:relative;padding-top:4px}
+.ckey{display:flex;align-items:center;gap:8px;margin:-8px 0 16px;color:#D9D7D2;font-size:.82rem;font-weight:600}
+.ckey i{width:0;height:16px;border-left:2px solid #F2EFE8}
+.ctick{position:absolute;top:-4px;height:28px;width:0;border-left:2px solid #F2EFE8;z-index:1;pointer-events:none;transition:left .35s ease}
+.crow{margin:0 0 16px}
+.crow:last-child{margin-bottom:4px}
+.cname{display:block;color:#E9E7E2;font-size:.9rem;font-weight:600;line-height:1.3;margin:0 0 6px}
+.cname small{display:block;color:#A9A6A0;font-weight:500;font-size:.78rem}
+.cbarwrap{position:relative;height:20px}
+.cbar{position:absolute;left:0;top:0;height:20px;border-radius:0 4px 4px 0;background:#6E6B66;transition:width .35s ease;outline:none;cursor:default}
+.cbar.hi{background:#B88C2E}
+.cbar:focus-visible{box-shadow:0 0 0 2px #1C1B19,0 0 0 4px #E2CC97}
+.cbar:hover{filter:brightness(1.12)}
+.cval{position:absolute;top:50%;transform:translateY(-50%);white-space:nowrap;color:#fff;font-weight:700;font-size:.92rem;transition:left .35s ease;pointer-events:none;z-index:2;background:#1C1B19;padding:5px 6px;border-radius:4px;line-height:1.2}
+.ctip{position:absolute;z-index:5;pointer-events:none;min-width:190px;max-width:240px;background:#F7F5F0;color:#1F1E1B;border-radius:10px;padding:10px 12px;font-size:.82rem;line-height:1.4;box-shadow:0 12px 30px -10px rgba(0,0,0,.6);opacity:0;transition:opacity .15s}
+.ctip.on{opacity:1}
+.ctip b{display:block;font-size:1rem;font-weight:800}
+.ctable{margin-top:10px}
+.ctable summary{cursor:pointer;color:#CFCDC8;font-size:.84rem;font-weight:600;padding:6px 0}
+.ctable table{width:100%;border-collapse:collapse;margin-top:6px;font-size:.84rem;color:#E9E7E2;font-variant-numeric:tabular-nums}
+.ctable th,.ctable td{padding:7px 6px;border-bottom:1px solid rgba(255,255,255,.1);text-align:right}
+.ctable th:first-child,.ctable td:first-child{text-align:left}
+.ctable th{color:#A9A6A0;font-weight:600}
+.cinsight{grid-column:1/-1;margin:0;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(226,204,151,.2);color:#E9E7E2;font-size:1rem}
+.cinsight b{color:#fff}
+.cshort{margin-top:22px;display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:center;border-radius:20px;padding:26px 30px;
+  background:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),var(--m-white) 70% 30%/800px;border:1px solid rgba(197,155,69,.6);color:var(--ink)}
+.cshort h3{color:var(--em-900);margin:0 0 6px;font-size:1.25rem}
+.cshort p{margin:0;color:#4A4946}
+.cnote{margin:18px 0 0;font-size:.8rem;line-height:1.6;color:#BDBAB4;max-width:900px}
+
+.herotest{margin:16px 0 0;font-size:.95rem;color:#D4D3D0}
+.herotest a{color:#F0E2BC;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.herotest a:hover{color:#fff}
+
+@media(max-width:900px){
+  .ccard{grid-template-columns:1fr}
+  .cshort{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .quiz,.calc.dark{background-size:auto,760px}
+  .qcard{padding:24px 18px 20px}
+  .qcard::after{inset:6px;border-radius:12px}
+  .qopt{padding:13px 14px;font-size:.93rem}
+  .ccard{padding:18px;gap:20px}
+  .cchart{padding:16px 14px 12px}
+  .cshort{padding:22px 20px}
+  .cshort .btn{width:100%;justify-content:center}
+  .qcta .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.qfade{animation:none}.cbar,.cval{transition:none}}
+
+/* ===================== CITÁT ===================== */
+.saying{background:linear-gradient(rgba(238,237,234,.5),rgba(238,237,234,.5)),var(--m-light) 20% 0/1000px;position:relative;z-index:2;margin-top:calc(-1*var(--e));
+  -webkit-mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat;
+  mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat}
+.quoteband{margin:0 auto;max-width:960px}
+.quoteband .lz{display:block;width:14px;height:14px;transform:rotate(45deg);background:var(--brass);margin:0 0 26px 3px}
+.quoteband blockquote{margin:0}
+.quoteband blockquote p{margin:0;font-weight:800;font-size:clamp(1.75rem,4.2vw,3.15rem);line-height:1.14;letter-spacing:-.025em;color:var(--em-900);text-wrap:balance}
+.quoteband blockquote em{color:#9A7A3E}
+.quoteband figcaption{display:flex;align-items:center;gap:12px;margin:26px 0 0;font-weight:700;color:#5E5D5A;font-size:.98rem}
+.quoteband figcaption::before{content:"";width:34px;height:2px;background:var(--brass)}
+.saying-sub{margin:22px 0 0;max-width:640px;color:#5E5D5A;font-size:1.06rem}
+@media(max-width:600px){.saying{background-size:auto,760px}.quoteband .lz{width:11px;height:11px;margin-bottom:20px}}
+
+/* menu: s odkazom Test sa na užších obrazovkách zmenšia medzery, nič sa nezalomí */
+@media(min-width:901px){nav .logo,nav .links a{white-space:nowrap}}
+@media(min-width:901px) and (max-width:1000px){nav .links{gap:14px}}
+
+/* ===================== BEZ PROMA ===================== */
+nav{top:0}
+/* album pokračuje rovno do formulára – len jeden preliv (formulár sa vlieva do albumu) */
+.album.dark{margin-bottom:0;
+  -webkit-mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat;
+  mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat}
+
+/* ===================== SKOK NA SEKCIU (pod menu) ===================== */
+section{scroll-margin-top:90px}
+
+/* ===================== KVÍZ – APLIKÁCIA ===================== */
+html{scroll-padding-top:86px}
+section.kv{padding:122px 0 calc(var(--e) + 24px);min-height:100vh;position:relative}
+.kv.dark{background:linear-gradient(rgba(40,39,36,.58),rgba(27,26,23,.80)),var(--m-dark) 35% 10%/1000px}
+.kv .wrap{max-width:860px;text-align:center}
+.kby{display:inline-flex;align-items:center;gap:12px;margin:0 0 22px;text-align:left}
+.kby img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 24%;border:2px solid rgba(226,204,151,.75);flex:none}
+.kby b{display:block;color:#fff;font-size:.98rem;line-height:1.3}
+.kby small{display:block;color:#CFCDC8;font-size:.82rem;line-height:1.35}
+.kv .eyebrow{justify-content:center}
+.kv h1{font-size:clamp(2.3rem,6vw,3.9rem);margin:.55rem 0 .9rem}
+.kv .lead{margin:0 auto;max-width:640px;color:#DEDDDA;font-size:1.06rem}
+.kv .qcard{text-align:left;color:var(--ink);margin-top:2.2rem}
+.kv .qcard h3,.kv .qcard h4{color:var(--em-900)}
+.kv .qcard .btn.ghost{color:var(--em-700);border-color:var(--em-300)}
+.kv .qcard .btn.ghost:hover{border-color:var(--em-700)}
+.qtop[hidden]{display:none}
+.kv .qprog{gap:12px}
+.kstart h3{font-size:1.35rem;margin:0 0 14px}
+.klist{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px}
+.klist li{position:relative;padding-left:24px;color:#3A3936}
+.klist li::before{content:"";position:absolute;left:3px;top:.6em;width:8px;height:8px;transform:rotate(45deg);background:var(--brass)}
+.knote{font-size:.86rem;color:#6D6C69;margin:0 0 20px}
+.khint{font-size:.86rem;color:#6D6C69;margin:-8px 0 14px}
+.knext[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.knext[hidden]{display:none}
+.kfollow{margin-top:18px;padding-top:16px;border-top:1px dashed rgba(184,149,78,.45)}
+.kv .qcard .kfq{font-size:1.05rem;margin:0 0 12px;line-height:1.3}
+.kfi-c{margin:4px 0 0;color:#A9A6A0;font-size:.82rem}
+.kfi-x{margin:12px 0 8px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(226,204,151,.22)}
+.kfi-x p{margin:0 0 8px;color:#D9D7D2;font-size:.85rem;line-height:1.55}
+.kfi-x p:last-child{margin-bottom:0}
+.kfi-x .kfi-q{color:#E2CC97;font-weight:700;font-size:.9rem;margin-bottom:6px}
+.qres .kcalm{margin:4px 0 6px;padding:12px 14px;border-left:3px solid #C9A55C;background:rgba(246,238,219,.6);border-radius:0 12px 12px 0;color:#3A3936;font-size:.95rem}
+.ktlab{margin:16px 0 6px}
+.kv textarea{min-height:74px}
+.ksub{color:#4A4946;margin:-6px 0 16px}
+.kpanel{background:#1F1E1B;border-radius:16px;padding:20px 20px 12px;margin:0 0 14px;color:#E9E7E2}
+.kpanel .cplot{margin-top:4px}
+.kpaid{margin:-6px 0 14px;color:#CFCDC8;font-size:.92rem}
+.kpaid b{color:#fff;font-size:1.05rem}
+.kcap{margin:0 0 12px;color:#E9E7E2;font-weight:700;font-size:.95rem}
+.kfi-k{margin:2px 0 0;color:#CFCDC8;font-size:.9rem;font-weight:600}
+.kfi-v{margin:0;color:#fff;font-size:clamp(1.9rem,5vw,2.5rem);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.kfi-t{margin:8px 0 6px;color:#E9E7E2;font-size:.95rem}
+.kfi-e{margin:0 0 8px;color:#A9A6A0;font-size:.8rem;line-height:1.5}
+.kcnote{font-size:.76rem;line-height:1.55;color:#6D6C69;margin:6px 0 0}
+.kh{font-size:1.05rem;margin:24px 0 8px;letter-spacing:-.01em}
+.ksum{display:grid;gap:6px;padding:14px 16px;border-radius:14px;background:rgba(246,238,219,.75);border:1px solid rgba(184,149,78,.35)}
+.qres .ksum p{margin:0;color:#3A3936;font-size:.95rem}
+.ksum b{color:#1F1E1B}
+.qres .knum{margin:0 0 6px}
+.knum b{color:#1F1E1B}
+.kform{margin-top:26px;padding-top:20px;border-top:1px solid rgba(184,149,78,.35)}
+.kform .kh{margin-top:0}
+.qres .ksmall{font-size:.88rem;color:#6D6C69;margin:-2px 0 14px}
+.kform .krow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.kform .chk{display:flex;gap:10px;align-items:flex-start;margin:14px 0 8px;font-size:.86rem;font-weight:500;color:#4A4946}
+.khp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.qres .kerr{color:#9B2C2C;font-size:.88rem;margin:0 0 8px}
+.qres .kthanks{margin-top:26px;padding:16px 18px;border-radius:14px;background:#F6EEDB;border:1px solid rgba(184,149,78,.5);color:#3A3936;font-weight:600}
+.qres .kres-note{font-size:.78rem;color:#6D6C69;margin:14px 0 0}
+.qres .qcta{margin-top:4px}
+@media(max-width:600px){
+  section.kv{padding:100px 0 calc(var(--e) + 16px)}
+  .kby{margin-bottom:18px}
+  .kv .qprog{gap:4px}
+  .kv .qprog i{width:6px;height:6px;border-width:1.2px}
+  .kv .qprog i.now{box-shadow:0 0 0 3px rgba(214,178,108,.25)}
+  .kform .krow{grid-template-columns:1fr}
+  .kpanel{padding:16px 14px 8px}
+  .qnav .knext{flex:1;justify-content:center;margin-left:16px}
+  .qres .qcta .btn{width:100%;justify-content:center}
+  .kstart .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="https://barboras22.github.io/barborasmeringai/" class="logo">Barbora Šmeringaiová</a>
+    <div class="links">
+      <a href="https://barboras22.github.io/barborasmeringai/">La mia pagina</a>
+      <a class="lang" href="https://barboras22.github.io/barborasmeringaiova/kviz.html" hreflang="sk" lang="sk" aria-label="Slovenská verzia"><span class="fl" aria-hidden="true">🇸🇰</span><span class="lc">SK</span></a>
+      <a class="ig" href="https://www.instagram.com/barbora.smeringai/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 3.8c2.7 0 3 0 4 .1 2.7.1 4 1.4 4.1 4.1.1 1 .1 1.4.1 4s0 3-.1 4c-.1 2.7-1.4 4-4.1 4.1-1 .1-1.4.1-4 .1s-3 0-4-.1c-2.7-.1-4-1.4-4.1-4.1-.1-1-.1-1.4-.1-4s0-3 .1-4C3.9 5.3 5.3 3.9 8 3.9c1-.1 1.4-.1 4-.1zM12 2c-2.7 0-3.1 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 8.9 2 9.3 2 12s0 3.1.1 4.1c.2 3.6 2.2 5.7 5.8 5.8 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c3.6-.2 5.7-2.2 5.8-5.8.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c-.2-3.6-2.2-5.7-5.8-5.8C15.1 2 14.7 2 12 2z"/></svg></a>
+      <a href="https://wa.me/393447611995" target="_blank" rel="noopener" class="btn">Scrivimi</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="kv dark" id="top">
+  <div class="wrap">
+    <div class="kby"><img src="images/hero.jpg" alt="Barbora Šmeringaiová" width="955" height="1400"><span><b>Barbora Šmeringaiová</b><small>Business online ed educazione finanziaria · 15.000+ persone nel team</small></span></div>
+    <div><span class="eyebrow">Quiz veloce · circa 3 minuti</span></div>
+    <h1>A che punto <em>sei?</em></h1>
+    <p class="lead">Rispondi a qualche domanda su dove sei ora e dove vuoi arrivare. Alla fine vedrai il tuo risultato personale, il tuo numero dell'indipendenza finanziaria e cosa può aiutarti a fare il prossimo passo.</p>
+    <div class="qcard" id="quiz">
+      <div class="qtop" id="qtop" hidden>
+        <div class="qprog" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <span class="qstep" id="qstep" aria-live="polite"></span>
+      </div>
+      <div id="qbody">
+        <div class="kstart">
+          <h3>Cosa ti aspetta</h3>
+          <ul class="klist"><li>Domande veloci – di solito basta un clic</li><li>Un calcolo di quanto può darti mettere da parte con costanza e il tuo numero dell'indipendenza finanziaria</li><li>Il tuo risultato personale e un consiglio per fare il passo successivo</li></ul>
+          <p class="knote">Non ti serve nessuna esperienza. Le risposte sono anonime e le vedo solo io – mi aiutano a capire meglio le difficoltà delle persone. Nome e numero alla fine li lasci solo se vuoi.</p>
+          <button type="button" class="btn gold" id="kgo">Inizia il quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>I risultati riportati su questo sito sono soggettivi e riflettono un'esperienza personale. I risultati passati non garantiscono quelli futuri. Questa attività richiede impegno e tempo e non garantisce guadagni se non ci lavori. Il trading e gli investimenti comportano il rischio di perdite.</p>
+    <p>I contenuti hanno scopo informativo e non costituiscono consulenza finanziaria.</p>
+    <p class="en">This information is only for reference purposes and is not a guarantee of earning.</p>
+    <p>© <span id="y"></span> Barbora Šmeringaiová · <a href="https://www.instagram.com/barbora.smeringai/" target="_blank" rel="noopener">Instagram @barbora.smeringai</a> · <a href="https://barboras22.github.io/barborasmeringaiova/" hreflang="sk" lang="sk">🇸🇰 Slovenská verzia</a></p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/393447611995" target="_blank" rel="noopener" aria-label="Scrivimi su WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>
+</a>
+
+<script>
+const CFG = {"lang": "it", "wa": "393447611995", "sheet": "", "webinar": "", "site": "https://barboras22.github.io/barborasmeringai/"};
+const SKQ = [["Študujem", "Som zamestnaný/á", "Podnikám alebo mám živnosť", "Momentálne nemám prácu", "Som na materskej alebo rodičovskej", "Už investujem alebo mám príjem popri práci"], ["Na konci mesiaca mi skoro nič nezostane", "Niečo si odložím, ale peniaze mi len ležia v banke", "Mám rezervu a chcem, aby pre mňa pracovala", "Mám dlhy alebo pôžičky, ktoré ma brzdia", "Zatiaľ nemám vlastný príjem"], ["Nájsť lepšiu prácu alebo zarábať viac", "Naučiť sa správne pracovať s peniazmi", "Vybudovať si príjem popri práci", "Začať investovať a budovať majetok", "Mať viac času pre seba a rodinu", "Osobnostne rásť a mať okolo seba ľudí s rovnakými cieľmi"], ["Mám finančnú rezervu a pokoj na duši", "Mám vlastný biznis alebo druhý príjem", "Pracujem odkiaľkoľvek a viac cestujem", "Mám viac času pre rodinu a pre seba", "Zatiaľ neviem – a práve to ma trápi"], ["Že zostanem tam, kde som teraz", "Že prídem o peniaze", "Že na to nebudem mať čas ani energiu", "Že nebudem mať dosť na dôchodok", "Čo by na to povedali ostatní"], ["Áno – investovanie alebo trading", "Áno – podnikanie alebo biznis popri práci", "Áno – network marketing", "Uvažoval/a som, ale nezačal/a som", "Nie, je to pre mňa nové"], ["Nevedel/a som, komu veriť", "Nemal/a som čas", "Nemám peniaze, s ktorými by som začal/a", "Nevedel/a som, kde začať", "Nemal/a som nikoho, kto by ma viedol"], ["Až budem mať viac peňazí", "Až budem mať viac času", "Až budem vedieť viac", "Až uvidím, že to funguje aj u iných", "Na nič – chcem začať čo najskôr"], ["Osobný rozhovor, kde mi všetko vysvetlíš", "Vidieť výsledky ľudí, ako som ja", "Pozrieť si najprv webinár", "Presne vedieť, čo to obnáša a koľko to stojí", "Mať pri sebe niekoho, kto ma povedie"], ["Hneď teraz", "Do mesiaca", "Do 3 mesiacov", "Neskôr, ale chcem vedieť viac", "Zatiaľ len zisťujem informácie"], ["Ako funguje investovanie", "Ako si vytvoriť príjem popri práci alebo online", "Ako si nastaviť rozpočet a sporiť", "Ako funguje trading a riziko", "Kde a s kým začať"], ["Menej ako 3 hodiny", "3 až 7 hodín", "Viac ako 7 hodín"], ["Do 5 rokov", "Do 10 rokov", "Do 20 rokov", "Do dôchodku", "Nemám predstavu"]];
+const SKF = ["Nemal/a som dosť informácií", "Nemal/a som podporu ani nikoho, kto by ma viedol", "Prišiel/prišla som o peniaze", "Chýbal mi čas alebo motivácia", "Okolie ma od toho odhovorilo"];
+const T = {"step": "Domanda {i} di {n}", "numStep": "I tuoi numeri", "done": "Fatto", "back": "Indietro", "next": "Avanti", "showRes": "Continua", "multiHint": "Scegli una o due opzioni.", "textLabel": "Vuoi descriverlo con parole tue? (facoltativo)", "textPh": "Per esempio: voglio un'entrata mia e più tempo per la famiglia…", "q": [{"q": "In che situazione ti trovi adesso?", "a": ["Studio", "Lavoro come dipendente", "Ho un'attività o sono libero/a professionista", "Al momento non ho un lavoro", "Sono in maternità o in congedo parentale", "Investo già o ho un'entrata extra"]}, {"q": "Come vanno adesso i tuoi soldi?", "a": ["A fine mese non mi resta quasi niente", "Metto qualcosa da parte, ma i soldi restano fermi in banca", "Ho dei risparmi e voglio che lavorino per me", "Ho debiti o prestiti che mi frenano", "Per ora non ho un mio reddito"]}, {"q": "Cosa vorresti migliorare di più nella tua vita?", "multi": true, "a": ["Trovare un lavoro migliore o guadagnare di più", "Imparare a gestire bene i miei soldi", "Creare un'entrata accanto al lavoro", "Iniziare a investire e costruire un patrimonio", "Avere più tempo per me e per la famiglia", "Crescere come persona ed essere circondato/a da persone con gli stessi obiettivi"]}, {"q": "Dove ti vedi tra 5 anni?", "text": true, "a": ["Con una riserva economica e la mente serena", "Con un mio business o una seconda entrata", "Lavoro da dove voglio e viaggio di più", "Con più tempo per la famiglia e per me", "Non lo so ancora – ed è proprio questo che mi pesa"]}, {"q": "Cosa ti preoccupa di più?", "a": ["Restare dove sono adesso", "Perdere soldi", "Non avere tempo né energie", "Non avere abbastanza per la pensione", "Cosa direbbero gli altri"]}, {"q": "Hai già provato in passato qualcosa per migliorare la tua situazione economica?", "a": ["Sì – investimenti o trading", "Sì – un'attività o un business accanto al lavoro", "Sì – network marketing", "Ci ho pensato, ma non ho iniziato", "No, per me è una novità"], "f": {"when": [0, 1, 2, 3], "q": "Qual è stato il motivo principale per cui non ha funzionato o non hai iniziato?", "a": ["Non avevo abbastanza informazioni", "Non avevo supporto né qualcuno che mi guidasse", "Ho perso dei soldi", "Mi mancavano tempo o motivazione", "Le persone intorno a me mi hanno fatto desistere"]}}, {"q": "Cosa ti ha frenato di più finora?", "a": ["Non sapevo di chi fidarmi", "Non avevo tempo", "Non ho soldi per iniziare", "Non sapevo da dove iniziare", "Non avevo nessuno che mi guidasse"]}, {"q": "Cosa stai ancora aspettando?", "a": ["Di avere più soldi", "Di avere più tempo", "Di saperne di più", "Di vedere che funziona anche per altri", "Niente – voglio iniziare il prima possibile"]}, {"q": "Cosa ti aiuterebbe a decidere?", "a": ["Una chiacchierata personale in cui mi spieghi tutto", "Vedere i risultati di persone come me", "Guardare prima il webinar", "Sapere esattamente cosa comporta e quanto costa", "Avere accanto qualcuno che mi guidi"]}, {"q": "Quando vorresti iniziare a cambiare qualcosa?", "a": ["Subito", "Entro un mese", "Entro 3 mesi", "Più avanti, ma voglio saperne di più", "Per ora sto solo raccogliendo informazioni"]}, {"q": "Quali informazioni pensi che ti manchino?", "multi": true, "a": ["Come funziona l'investimento", "Come creare un'entrata accanto al lavoro o online", "Come impostare un budget e risparmiare", "Come funzionano il trading e il rischio", "Da dove e con chi iniziare"]}, {"q": "Quanto tempo a settimana potresti dedicarci?", "a": ["Meno di 3 ore", "Da 3 a 7 ore", "Più di 7 ore"]}, {"q": "Entro quando vorresti essere finanziariamente indipendente?", "years": [5, 10, 20, 0, 0], "a": ["Entro 5 anni", "Entro 10 anni", "Entro 20 anni", "Entro la pensione", "Non ne ho idea"]}], "numTitle": "I tuoi numeri", "numSub": "Sposta gli importi come preferisci. Tutto è a prezzi di oggi – cioè quanto potrai davvero comprare con quei soldi.", "save": "Ogni mese posso mettere da parte", "years": "Per", "paidLbl": "In totale versi", "chartCap": "Valore a prezzi di oggi", "key": "versato in totale {x}", "rows": ["A casa o sul conto corrente", "Conto deposito in banca", "Investimento a lungo termine"], "rowsSmall": ["senza interessi", "interesse del 2,5% annuo", "azioni mondiali, media storica del 5,2% annuo oltre l'inflazione"], "need": "Per vivere mi servono al mese", "fiK": "Il tuo numero dell'indipendenza finanziaria", "fiWhat": "Cosa significa questo numero?", "fiE1": "Sei finanziariamente indipendente quando i tuoi soldi investiti ti rendono ogni anno quanto ti serve per vivere. A quel punto il lavoro diventa una scelta, non un obbligo.", "fiE2": "Perché 25 volte? Deriva dalla nota regola del 4%: secondo i dati storici, dai tuoi investimenti puoi prelevare ogni anno circa il 4% e nella maggior parte dei casi ti durano almeno 30 anni. Perché il 4% copra le tue spese annuali, ti serve 25 volte tanto (100 : 4 = 25).", "fiCalc": "Il tuo calcolo: {n} × 12 mesi = {y} all'anno × 25 = {fi}", "fiT": "Con {p} al mese e la media storica delle azioni mondiali ci vorrebbero circa {y}.", "fiT2": " Con il doppio, circa {y}.", "fiLong": "Con {p} al mese ci vorrebbero più di 60 anni. Per questo ha senso cercare anche un modo per guadagnare di più.", "fiMore": "Per questo ha senso cercare anche un modo per guadagnare di più.", "calcNote": "Calcolo illustrativo: inflazione del 3% annuo, conto deposito al 2,5% annuo, azioni mondiali al 5,2% annuo oltre l'inflazione (media 1900–2024 secondo l'UBS Global Investment Returns Yearbook 2025). Versamento a fine mese, senza costi né tasse. Non è una raccomandazione d'investimento né una promessa di rendimento – investire comporta il rischio di perdita.", "kick": "Il tuo risultato", "res": [["I soldi ti scivolano tra le dita.", "Ci siamo passati quasi tutti – anch'io. Il primo passo non è guadagnare subito di più, ma capire dove vanno i soldi e imparare a gestirli."], ["Risparmi – ma i tuoi soldi dormono.", "È bello che tu metta qualcosa da parte. Però in banca, con interessi bassi, l'inflazione si mangia piano piano il loro valore. Nei tuoi numeri vedi la differenza."], ["Le basi ce le hai. Ora fai lavorare i soldi per te.", "Una riserva è un ottimo inizio. Il passo successivo è imparare a farla crescere in modo sensato e nel lungo periodo – conoscendo i rischi."], ["Prima liberarti le mani, poi crescere.", "I debiti possono frenare parecchio. La buona notizia è che anche da qui si può uscire, un passo alla volta, con un piano."], ["Il momento migliore per iniziare è adesso.", "Chi impara presto a gestire i soldi ha un enorme vantaggio. Un reddito tuo e le abitudini giuste si possono costruire fin dall'inizio."]], "calm": "Non ti servono esperienza né competenze con i soldi. Tutto si può imparare – passo dopo passo, con i tuoi ritmi e tra persone che questa strada l'hanno già fatta. Sei tu che impari, sei tu che verifichi tutto e sei tu che decidi.", "sumTitle": "La tua situazione in breve", "sumNow": "Adesso:", "sumWant": "Vuoi:", "sum5": "Tra 5 anni:", "sumWhen": "Vuoi iniziare:", "helpTitle": "Cosa può aiutarti", "goal": ["Si può guadagnare di più anche senza un secondo lavoro. Scoprirai come costruire, passo dopo passo, un'entrata online accanto a quello che fai ora.", "Imparerai le basi: dove vanno i tuoi soldi, come impostare un budget e come farli lavorare.", "Un'entrata accanto al lavoro si basa su metodo e costanza. Vedrai come funziona in pratica per persone che hanno iniziato come te.", "Nell'investimento a lungo termine contano soprattutto il tempo e la costanza. Nei tuoi numeri vedi cosa può fare anche una piccola cifra.", "Più tempo significa avere un'entrata che non dipende solo dalle ore lavorate. Scoprirai come arrivarci, un passo alla volta.", "Non si tratta solo di soldi – entri in un gruppo di persone con i tuoi stessi obiettivi e valori, che ti spingono a dare il meglio."], "obj": ["La fiducia si costruisce piano piano – prima parliamo e verifichi tutto da solo/a.", "È tutto online e si fa anche accanto al lavoro, con i tuoi ritmi.", "All'inizio contano più le informazioni giuste che una grande somma.", "Non devi sapere tutto subito – avrai un percorso chiaro, passo dopo passo.", "Non sarai da solo/a – ti garantisco il mio supporto e il mio aiuto."], "pastWhy": ["Questa volta avrai tutte le informazioni prima – anche sui rischi.", "La differenza la fa il supporto – questa volta non sarai da solo/a.", "Aver perso dei soldi è un'esperienza preziosa. Scoprirai come imparare a gestire il rischio.", "La motivazione cresce in un team – con persone che hanno il tuo stesso obiettivo è tutto più facile.", "La decisione spetta a te – e puoi verificare tutto di persona."], "fear": ["La paura di restare dove sei è un ottimo motore – basta fare il primo passo.", "La paura di perdere soldi è normale. Per questo si parla anche dei rischi, non solo dei risultati.", "Bastano anche poche ore a settimana, se le usi bene.", "Pensi alla pensione per tempo – e quando metti da parte, il tempo è il tuo miglior alleato.", "Quando vedranno i tuoi risultati, cambieranno idea. Fino ad allora avrai il supporto del team."], "wait": ["Spesso si aspettano anni per avere più soldi. Per questo ha senso partire proprio da come averne di più.", "Il momento ideale raramente arriva da solo – basta iniziare con il tempo che hai adesso.", "Il modo più veloce per saperne di più è iniziare – passo dopo passo e con supporto.", "Ti mostro volentieri i risultati delle persone del team – poi decidi tu.", "Ottimo che tu non voglia aspettare. Scrivimi e decidiamo insieme il primo passo."], "info": "Ti manca soprattutto: {x}. È proprio quello che si può imparare – anche senza esperienza.", "and": " e ", "numLine": "Con {p} al mese, tra {y} i tuoi risparmi investiti a lungo termine potrebbero valere circa {c} a prezzi di oggi. A casa sarebbero {a}.", "fiLine": "Il tuo numero dell'indipendenza finanziaria è {fi}.", "goalLine": "Vuoi raggiungerlo {t}. Solo mettendo da parte servirebbero circa {pn} al mese – per questo ha senso lavorare anche su un reddito più alto.", "goalOk": "Vuoi raggiungerlo {t} – con {p} al mese, secondo il calcolo, ce la fai.", "goalRet": "Prima inizi, meno devi mettere da parte ogni mese.", "goalNone": "Se vuoi, fissiamo insieme un obiettivo realistico e una scadenza.", "nextTitle": "Il prossimo passo", "nextText": "La cosa migliore è fare una chiacchierata insieme. Ti mostro dove trovi tutte le informazioni e come puoi imparare con i tuoi ritmi – poi la decisione è solo tua.", "decide": ["Scrivimi e ti spiego tutto in una chiacchierata personale.", "Nella chiacchierata ti mostro le storie di persone del team che hanno iniziato come te.", "Inizia dal webinar, dove vedi come funziona tutto – poi ne parliamo.", "Nella chiacchierata scopri esattamente cosa comporta e quanto costa – vedi tutto prima.", "I primi passi li facciamo insieme, così saprai cosa fare e a chi rivolgerti."], "decideNoWeb": "Scrivimi e ti mando il link del webinar, dove vedi come funziona tutto.", "waBtn": "Scrivi a Barbora su WhatsApp", "webinarBtn": "Guarda il webinar", "siteBtn": "Vai alla mia pagina", "waHello": "Ciao Barbora, ho fatto il tuo quiz ✨", "waRows": ["Adesso", "Soldi", "Vorrei", "Tra 5 anni", "Mi frena", "Vorrei iniziare"], "waEnd": "Vorrei parlare di come potrei iniziare.", "formTitle": "Oppure lasciami il tuo contatto e ti scrivo io", "formText": "Facoltativo – bastano nome e numero WhatsApp.", "fName": "Nome", "fTel": "Telefono (WhatsApp)", "telPh": "+39 3xx xxx xxxx", "fNote": "Di cosa vorresti parlare? (facoltativo)", "consent": "Acconsento a essere contattato/a da Barbora Šmeringaiová riguardo al risultato del quiz. I dati verranno usati solo per questo scopo.", "formBtn": "Invia il contatto", "formErr": "Inserisci nome, numero di telefono e conferma il consenso.", "thanks": "Grazie, {n}! Ti scrivo il prima possibile.", "restart": "Ricomincia", "resNote": "Il risultato del quiz è solo indicativo. Non è consulenza finanziaria, né una raccomandazione d'investimento, né una promessa di guadagno."};
+</script>
+<script>
+/* ===================== KVÍZ – Barbora Šmeringaiová ===================== */
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var body = $("qbody"), qtop = $("qtop"), stepEl = $("qstep"), card = $("quiz");
+  var marks = [].slice.call(document.querySelectorAll("#quiz .qprog i"));
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var NQ = T.q.length;
+  /* order of steps: all questions, the numbers step goes before the last question (by when) */
+  var SEQ = [];
+  for (var s = 0; s < NQ; s++) { if (s === NQ - 1) SEQ.push("N"); SEQ.push(s); }
+  var Q_EXP = 5, Q_BLOCK = 6, Q_WAIT = 7, Q_DECIDE = 8, Q_WHEN = 9, Q_INFO = 10, Q_TIME = 11, Q_FI = 12;
+  var INFL = 0.03, BANK = 0.025, REAL_STOCKS = 0.052;
+  var RATES = [0, BANK, (1 + REAL_STOCKS) * (1 + INFL) - 1];
+  var st = { i: -1, a: [], f: {}, vt: "", P: 100, Y: 10, need: 1200, id: "", sent: false, real: [0, 0, 0], fi: 0 };
+
+  function track(p) { try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: p + "-" + CFG.lang, title: p, event: true }); } catch (e) {} }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function fmt(x) { return String(x >= 1000 ? Math.round(x / 10) * 10 : Math.round(x)).replace(/\B(?=(\d{3})+(?!\d))/g, CFG.lang === "sk" ? " " : ".") + " €"; }
+  function yAcc(n) { return CFG.lang === "sk" ? n + " " + (n === 1 ? "rok" : n < 5 ? "roky" : "rokov") : n + (n === 1 ? " anno" : " anni"); }
+  function yGen(n) { return CFG.lang === "sk" ? n + " " + (n === 1 ? "roka" : "rokov") : n + (n === 1 ? " anno" : " anni"); }
+  function lc(s) { return s.charAt(0).toLowerCase() + s.slice(1); }
+  function fill(s, o) { return s.replace(/\{(\w+)\}/g, function (m, k) { return o[k] != null ? o[k] : m; }); }
+  function fv(P, R, n) { var r = Math.pow(1 + R, 1 / 12) - 1; return r === 0 ? P * n : P * (Math.pow(1 + r, n) - 1) / r; }
+  var RR = Math.pow(1 + REAL_STOCKS, 1 / 12) - 1;   // real monthly return of world stocks
+  function fiYears(P, FI) { return Math.log(1 + FI * RR / P) / Math.log(1 + RR) / 12; }
+  function monthlyFor(FI, years) { return FI * RR / (Math.pow(1 + RR, years * 12) - 1); }
+  /* text with **bold** parts -> nodes */
+  function rich(parent, s) { s.split(/\*\*(.*?)\*\*/).forEach(function (part, k) { parent.appendChild(k % 2 ? el("b", null, part) : document.createTextNode(part)); }); return parent; }
+  /* how long to the financial independence number (+ the doubled amount on the numbers step) */
+  function fiText(P, FI, withDouble) {
+    var yr = fiYears(P, FI), yr2 = fiYears(P * 2, FI);
+    if (yr > 60) return fill(T.fiLong, { p: fmt(P) });
+    var t = fill(T.fiT, { p: fmt(P), y: yAcc(Math.max(1, Math.round(yr))) });
+    if (withDouble && yr2 <= 60) t += fill(T.fiT2, { y: yAcc(Math.max(1, Math.round(yr2))) });
+    if (yr > 25) t += " " + T.fiMore;
+    return t;
+  }
+  function hasFollow(q, k) { var f = T.q[q].f; return !!f && f.when.indexOf(k) >= 0; }
+
+  function source() {
+    var u = new URLSearchParams(location.search), s = u.get("z") || u.get("utm_source") || "";
+    if (!s && document.referrer) { try { s = new URL(document.referrer).hostname; } catch (e) {} }
+    return s.slice(0, 80);
+  }
+  function send(d) {
+    if (!CFG.sheet) { if (window.console) console.info("[kvíz] Google tabuľka ešte nie je pripojená:", d); return; }
+    var data = JSON.stringify(d);
+    try { if (navigator.sendBeacon && navigator.sendBeacon(CFG.sheet, new Blob([data], { type: "text/plain;charset=utf-8" }))) return; } catch (e) {}
+    try { fetch(CFG.sheet, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: data }).catch(function () {}); } catch (e) {}
+  }
+  /* answers always go to the sheet with the Slovak wording, so both languages land in the same columns */
+  function lab(q, k) { return SKQ[q][k]; }
+  function labs(q) { return (st.a[q] || []).map(function (k) { return lab(q, k); }).join(" | "); }
+  function payload() {
+    var A = st.a;
+    return { typ: "odpovede", id: st.id, jazyk: CFG.lang, zdroj: source(),
+      situacia: lab(0, A[0]), peniaze: lab(1, A[1]), zlepsit: labs(2), vizia: lab(3, A[3]), vizia_text: st.vt.trim().slice(0, 400),
+      obava: lab(4, A[4]), skusenost: lab(Q_EXP, A[Q_EXP]), skusenost_dovod: hasFollow(Q_EXP, A[Q_EXP]) && st.f[Q_EXP] != null ? SKF[st.f[Q_EXP]] : "",
+      brzda: lab(Q_BLOCK, A[Q_BLOCK]), caka: lab(Q_WAIT, A[Q_WAIT]), pomohlo: lab(Q_DECIDE, A[Q_DECIDE]), kedy: lab(Q_WHEN, A[Q_WHEN]),
+      info: labs(Q_INFO), cas: lab(Q_TIME, A[Q_TIME]),
+      odlozi: st.P, roky: st.Y, investovanie: Math.round(st.real[2]), potrebuje: st.need, cislo_fn: st.fi, fn_do: lab(Q_FI, A[Q_FI]) };
+  }
+
+  function progress() { marks.forEach(function (m, k) { m.classList.toggle("done", k < st.i); m.classList.toggle("now", k === st.i); }); }
+  function bringIntoView() {
+    var r = card.getBoundingClientRect(), phone = window.innerWidth < 700;
+    if ((phone && Math.abs(r.top - 78) > 12) || r.top < 64 || r.top > window.innerHeight * 0.55)
+      window.scrollTo({ top: window.scrollY + r.top - (phone ? 78 : 86), behavior: reduce ? "auto" : "smooth" });
+  }
+  function go(k) { st.i = k; show(true); bringIntoView(); }
+  function navRow(withBack, nextBtn) {
+    var nav = el("div", "qnav");
+    if (withBack) { var bk = el("button", "qlink", T.back); bk.type = "button"; bk.onclick = function () { go(st.i - 1); }; nav.appendChild(bk); }
+    else nav.appendChild(el("span"));
+    if (nextBtn) nav.appendChild(nextBtn);
+    return nav;
+  }
+  function show(focus) {
+    body.textContent = ""; progress(); qtop.hidden = false;
+    if (st.i >= SEQ.length) result(focus); else if (SEQ[st.i] === "N") numbers(focus); else question(SEQ[st.i], focus);
+  }
+  function optionBox(label, items, isOn, onPick) {
+    var box = el("div", "qopts"); box.setAttribute("role", "group"); box.setAttribute("aria-label", label);
+    items.forEach(function (t, k) {
+      var b = el("button", "qopt", t); b.type = "button"; b.setAttribute("aria-pressed", isOn(k) ? "true" : "false");
+      b.onclick = function () { onPick(k, b, box); };
+      box.appendChild(b);
+    });
+    return box;
+  }
+  function mark(box, isOn) { [].forEach.call(box.children, function (x, j) { x.setAttribute("aria-pressed", isOn(j) ? "true" : "false"); }); }
+
+  /* ---------- question ---------- */
+  function question(qi, focus) {
+    var Q = T.q[qi], cur = st.a[qi], next = null, followWrap = null;
+    stepEl.textContent = fill(T.step, { i: qi + 1, n: NQ });
+    var wrap = el("div", "qq qfade"), h = el("h3", null, Q.q); h.tabIndex = -1; wrap.appendChild(h);
+    if (Q.multi) wrap.appendChild(el("p", "khint", T.multiHint));
+    next = el("button", "btn gold knext", T.next); next.type = "button"; next.onclick = function () { go(st.i + 1); };
+    function updateNext() {
+      var a = st.a[qi];
+      next.hidden = !(Q.multi || Q.text || (Q.f && a != null && hasFollow(qi, a)));
+      next.disabled = Q.multi ? !(a && a.length) : a == null || (Q.f && hasFollow(qi, a) && st.f[qi] == null);
+    }
+    function renderFollow() {
+      if (followWrap) { followWrap.remove(); followWrap = null; }
+      var a = st.a[qi];
+      if (!(Q.f && a != null && hasFollow(qi, a))) return;
+      followWrap = el("div", "kfollow qfade");
+      followWrap.appendChild(el("h4", "kfq", Q.f.q));
+      followWrap.appendChild(optionBox(Q.f.q, Q.f.a, function (k) { return st.f[qi] === k; }, function (k, b, box) {
+        st.f[qi] = k; mark(box, function (j) { return j === k; }); updateNext();
+      }));
+      box.after(followWrap);
+    }
+    var box = optionBox(Q.q, Q.a, function (k) { return Q.multi ? (cur || []).indexOf(k) >= 0 : cur === k; }, function (k, b, bx) {
+      if (Q.multi) {
+        var s = (st.a[qi] || []).slice(), p = s.indexOf(k);
+        if (p >= 0) s.splice(p, 1); else { s.push(k); if (s.length > 2) s.shift(); }
+        st.a[qi] = s; mark(bx, function (j) { return s.indexOf(j) >= 0; }); updateNext();
+      } else if (Q.text) {
+        st.a[qi] = k; mark(bx, function (j) { return j === k; }); updateNext();
+      } else if (Q.f && hasFollow(qi, k)) {
+        if (st.a[qi] !== k) delete st.f[qi];
+        st.a[qi] = k; mark(bx, function (j) { return j === k; }); renderFollow(); updateNext();
+        if (followWrap && window.innerWidth < 700) setTimeout(function () { followWrap.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" }); }, 60);
+      } else {
+        st.a[qi] = k; delete st.f[qi]; mark(bx, function (j) { return j === k; }); if (followWrap) { followWrap.remove(); followWrap = null; }
+        setTimeout(function () { go(st.i + 1); }, reduce ? 0 : 220);
+      }
+    });
+    wrap.appendChild(box);
+    if (Q.text) {
+      var l = el("label", "ktlab", T.textLabel); l.htmlFor = "kvt";
+      var ta = el("textarea"); ta.id = "kvt"; ta.maxLength = 400; ta.rows = 3; ta.placeholder = T.textPh; ta.value = st.vt;
+      ta.oninput = function () { st.vt = ta.value; };
+      wrap.appendChild(l); wrap.appendChild(ta);
+    }
+    wrap.appendChild(navRow(st.i > 0, next));
+    body.appendChild(wrap);
+    renderFollow(); updateNext();
+    if (focus) h.focus({ preventScroll: true });
+  }
+
+  /* ---------- numbers: savings + financial independence ---------- */
+  function slider(id, label, min, max, step, val) {
+    var f = document.createDocumentFragment();
+    var l = el("label"); l.htmlFor = id; l.appendChild(document.createTextNode(label + " "));
+    var o = el("output"); o.id = id + "-out"; o.htmlFor = id; l.appendChild(o);
+    var r = el("input"); r.type = "range"; r.id = id; r.min = min; r.max = max; r.step = step; r.value = val;
+    f.appendChild(l); f.appendChild(r); return f;
+  }
+  function numbers(focus) {
+    stepEl.textContent = T.numStep;
+    var wrap = el("div", "qq qfade kn"), h = el("h3", null, T.numTitle); h.tabIndex = -1; wrap.appendChild(h);
+    wrap.appendChild(el("p", "ksub", T.numSub));
+
+    var p1 = el("div", "kpanel cin");
+    p1.appendChild(slider("k-m", T.save, 25, 1000, 25, st.P));
+    p1.appendChild(slider("k-y", T.years, 1, 30, 1, st.Y));
+    var paid = el("p", "kpaid"); paid.appendChild(document.createTextNode(T.paidLbl + " ")); paid.appendChild(el("b")).id = "k-paid"; p1.appendChild(paid);
+    var cap = el("p", "kcap", T.chartCap); p1.appendChild(cap);
+    var key = el("p", "ckey"); key.appendChild(el("i")).setAttribute("aria-hidden", "true"); key.appendChild(el("span")).id = "k-key"; p1.appendChild(key);
+    var plot = el("div", "cplot");
+    T.rows.forEach(function (name, k) {
+      var row = el("div", "crow"), nm = el("span", "cname", name); nm.appendChild(el("small", null, T.rowsSmall[k])); row.appendChild(nm);
+      var bw = el("div", "cbarwrap"), bar = el("div", "cbar" + (k === 2 ? " hi" : "")); bar.id = "k-b" + k; bar.setAttribute("role", "img");
+      var tick = el("i", "ctick"); tick.setAttribute("aria-hidden", "true");
+      var v = el("span", "cval"); v.id = "k-v" + k;
+      bw.appendChild(bar); bw.appendChild(tick); bw.appendChild(v); row.appendChild(bw); plot.appendChild(row);
+    });
+    p1.appendChild(plot); wrap.appendChild(p1);
+
+    var p2 = el("div", "kpanel cin kfi");
+    p2.appendChild(slider("k-n", T.need, 300, 5000, 50, st.need));
+    p2.appendChild(el("p", "kfi-k", T.fiK));
+    p2.appendChild(el("p", "kfi-v")).id = "k-fi";
+    p2.appendChild(el("p", "kfi-c")).id = "k-fic";
+    p2.appendChild(el("p", "kfi-t")).id = "k-fit";
+    var ex = el("div", "kfi-x");
+    ex.appendChild(el("p", "kfi-q", T.fiWhat));
+    ex.appendChild(el("p", null, T.fiE1));
+    ex.appendChild(el("p", null, T.fiE2));
+    p2.appendChild(ex);
+    wrap.appendChild(p2);
+    wrap.appendChild(el("p", "kcnote", T.calcNote));
+
+    var nx = el("button", "btn gold knext", T.showRes); nx.type = "button"; nx.onclick = function () { go(st.i + 1); };
+    wrap.appendChild(navRow(true, nx));
+    body.appendChild(wrap);
+
+    var m = $("k-m"), y = $("k-y"), n = $("k-n");
+    function setFill(inp) { inp.style.setProperty("--p", ((inp.value - inp.min) / (inp.max - inp.min) * 100) + "%"); }
+    function render() {
+      var P = st.P = +m.value, Y = st.Y = +y.value, N = st.need = +n.value;
+      var months = Y * 12, defl = Math.pow(1 + INFL, Y), paidV = P * months;
+      var real = st.real = RATES.map(function (R) { return fv(P, R, months) / defl; });
+      $("k-m-out").textContent = fmt(P); $("k-y-out").textContent = yGen(Y); $("k-n-out").textContent = fmt(N);
+      m.setAttribute("aria-valuetext", fmt(P)); y.setAttribute("aria-valuetext", yGen(Y)); n.setAttribute("aria-valuetext", fmt(N));
+      $("k-paid").textContent = fmt(paidV);
+      $("k-key").textContent = fill(T.key, { x: fmt(paidV) });
+      var max = Math.max(paidV, real[0], real[1], real[2]) / 0.72;
+      real.forEach(function (v, k) {
+        var w = v / max * 100;
+        $("k-b" + k).style.width = w + "%"; $("k-v" + k).style.left = "calc(" + w + "% + 4px)"; $("k-v" + k).textContent = fmt(v);
+        $("k-b" + k).setAttribute("aria-label", T.rows[k] + ": " + fmt(v));
+      });
+      var rp = paidV / max * 100;
+      [].forEach.call(document.querySelectorAll(".kn .ctick"), function (t) { t.style.left = "calc(" + rp + "% - 1px)"; });
+      var FI = st.fi = N * 12 * 25;
+      $("k-fi").textContent = fmt(FI);
+      $("k-fic").textContent = fill(T.fiCalc, { n: fmt(N), y: fmt(N * 12), fi: fmt(FI) });
+      $("k-fit").textContent = fiText(P, FI, true);
+      [m, y, n].forEach(setFill);
+    }
+    [m, y, n].forEach(function (inp) { inp.addEventListener("input", render); });
+    render();
+    if (focus) h.focus({ preventScroll: true });
+  }
+
+  /* ---------- result ---------- */
+  function goalText() {
+    var k = st.a[Q_FI], yrs = T.q[Q_FI].years[k];
+    if (k === 3) return T.goalRet;
+    if (!yrs) return T.goalNone;
+    var t = lc(T.q[Q_FI].a[k]);
+    if (fiYears(st.P, st.fi) <= yrs) return fill(T.goalOk, { t: t, p: fmt(st.P) });
+    return fill(T.goalLine, { t: t, pn: "**" + fmt(monthlyFor(st.fi, yrs)) + "**" });
+  }
+  function result(focus) {
+    stepEl.textContent = T.done;
+    var A = st.a, q = T.q, r = T.res[A[1]];
+    var wrap = el("div", "qres qfade");
+    wrap.appendChild(el("p", "qkick", T.kick));
+    var h = el("h3", null, r[0]); h.tabIndex = -1; wrap.appendChild(h);
+    wrap.appendChild(el("p", null, r[1]));
+    wrap.appendChild(el("p", "kcalm", T.calm));
+
+    wrap.appendChild(el("h4", "kh", T.sumTitle));
+    var sum = el("div", "ksum");
+    [[T.sumNow, q[0].a[A[0]]], [T.sumWant, A[2].map(function (k) { return q[2].a[k]; }).join(" · ")], [T.sum5, q[3].a[A[3]]], [T.sumWhen, q[Q_WHEN].a[A[Q_WHEN]]]].forEach(function (x) {
+      var p = el("p"); p.appendChild(el("b", null, x[0] + " ")); p.appendChild(document.createTextNode(x[1])); sum.appendChild(p);
+    });
+    wrap.appendChild(sum);
+
+    wrap.appendChild(el("h4", "kh", T.helpTitle));
+    var tips = [T.goal[A[2][0]], T.obj[A[Q_BLOCK]]];
+    if (hasFollow(Q_EXP, A[Q_EXP]) && st.f[Q_EXP] != null) tips.push(T.pastWhy[st.f[Q_EXP]]);
+    tips.push(T.fear[A[4]], T.wait[A[Q_WAIT]], fill(T.info, { x: A[Q_INFO].map(function (k) { return lc(q[Q_INFO].a[k]); }).join(T.and) }));
+    var ul = el("ul"); tips.forEach(function (t) { ul.appendChild(el("li", null, t)); }); wrap.appendChild(ul);
+
+    wrap.appendChild(el("h4", "kh", T.numTitle));
+    wrap.appendChild(rich(el("p", "knum"), fill(T.numLine, { p: "**" + fmt(st.P) + "**", y: yAcc(st.Y), c: "**" + fmt(st.real[2]) + "**", a: fmt(st.real[0]) })));
+    wrap.appendChild(rich(el("p", "knum"), fill(T.fiLine, { fi: "**" + fmt(st.fi) + "**" }) + " " + fiText(st.P, st.fi, false)));
+    wrap.appendChild(rich(el("p", "knum"), goalText()));
+
+    wrap.appendChild(el("h4", "kh", T.nextTitle));
+    var dk = A[Q_DECIDE];
+    wrap.appendChild(el("p", null, T.nextText + " " + (dk === 2 && !CFG.webinar ? T.decideNoWeb : T.decide[dk])));
+    var waRowsV = [q[0].a[A[0]], q[1].a[A[1]], A[2].map(function (k) { return q[2].a[k]; }).join(", "), q[3].a[A[3]], q[Q_BLOCK].a[A[Q_BLOCK]], q[Q_WHEN].a[A[Q_WHEN]]];
+    var msg = T.waHello + "\n" + waRowsV.map(function (v, k) { return T.waRows[k] + ": " + v; }).join("\n") + "\n" + T.waEnd;
+    var wa = el("a", "btn", T.waBtn); wa.href = "https://wa.me/" + CFG.wa + "?text=" + encodeURIComponent(msg); wa.target = "_blank"; wa.rel = "noopener";
+    wa.addEventListener("click", function () { track("kviz-whatsapp"); });
+    var wb = null;
+    if (CFG.webinar) { wb = el("a", "btn", T.webinarBtn); wb.href = CFG.webinar; wb.target = "_blank"; wb.rel = "noopener"; wb.addEventListener("click", function () { track("kviz-webinar"); }); }
+    var si = el("a", "btn ghost", T.siteBtn); si.href = CFG.site; si.addEventListener("click", function () { track("kviz-stranka"); });
+    /* ready to start soon -> conversation first; still exploring (or wants the webinar) -> webinar first */
+    var webFirst = wb && (A[Q_WHEN] >= 2 || dk === 2);
+    var order = webFirst ? [wb, wa, si] : [wa, wb, si];
+    var cta = el("div", "qcta");
+    order.forEach(function (b, k) { if (!b) return; if (b !== si) b.className = "btn " + (k === 0 ? "gold" : "ghost"); cta.appendChild(b); });
+    wrap.appendChild(cta);
+
+    wrap.appendChild(contactForm());
+
+    var again = el("button", "qlink", T.restart); again.type = "button"; again.style.marginTop = "18px";
+    again.onclick = function () { begin(); };
+    wrap.appendChild(again);
+    wrap.appendChild(el("p", "kres-note", T.resNote));
+    body.appendChild(wrap);
+    if (focus) h.focus({ preventScroll: true });
+    if (!st.sent) { st.sent = true; send(payload()); track("kviz-hotovo"); }
+  }
+
+  function field(id, label, type, ac, ph, max) {
+    var d = el("div"), l = el("label", null, label); l.htmlFor = id;
+    var i = el("input"); i.id = id; i.type = type; i.autocomplete = ac; i.maxLength = max; if (ph) i.placeholder = ph;
+    d.appendChild(l); d.appendChild(i); return d;
+  }
+  function contactForm() {
+    var f = el("form", "kform"); f.noValidate = true;
+    f.appendChild(el("h4", "kh", T.formTitle));
+    f.appendChild(el("p", "ksmall", T.formText));
+    var row = el("div", "krow");
+    row.appendChild(field("k-name", T.fName, "text", "name", "", 60));
+    row.appendChild(field("k-tel", T.fTel, "tel", "tel", T.telPh, 30));
+    f.appendChild(row);
+    var nl = el("label", null, T.fNote); nl.htmlFor = "k-note"; f.appendChild(nl);
+    var nt = el("textarea"); nt.id = "k-note"; nt.maxLength = 400; nt.rows = 2; f.appendChild(nt);
+    var hp = el("input", "khp"); hp.name = "web"; hp.tabIndex = -1; hp.autocomplete = "off"; hp.setAttribute("aria-hidden", "true"); f.appendChild(hp);
+    var ck = el("label", "chk"), cb = el("input"); cb.type = "checkbox"; cb.id = "k-ok"; ck.appendChild(cb); ck.appendChild(el("span", null, T.consent)); f.appendChild(ck);
+    var err = el("p", "kerr"); err.setAttribute("role", "alert"); f.appendChild(err);
+    var btn = el("button", "btn", T.formBtn); btn.type = "submit"; f.appendChild(btn);
+    f.onsubmit = function (e) {
+      e.preventDefault();
+      var name = $("k-name").value.trim(), tel = $("k-tel").value.trim();
+      if (name.length < 2 || tel.replace(/\D/g, "").length < 6 || !cb.checked) { err.textContent = T.formErr; return; }
+      err.textContent = "";
+      if (!hp.value) send({ typ: "kontakt", id: st.id, jazyk: CFG.lang, meno: name, telefon: tel, poznamka: nt.value.trim().slice(0, 400), suhlas: true });
+      track("kviz-kontakt");
+      var ok = el("p", "kthanks", fill(T.thanks, { n: name.split(" ")[0] })); ok.setAttribute("role", "status");
+      f.replaceWith(ok);
+    };
+    return f;
+  }
+
+  function begin() {
+    st.id = Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+    st.a = []; st.f = {}; st.vt = ""; st.sent = false; st.P = 100; st.Y = 10; st.need = 1200;
+    go(0);
+  }
+  $("kgo").addEventListener("click", function () { track("kviz-start"); begin(); });
+  var yEl = $("y"); if (yEl) yEl.textContent = new Date().getFullYear();
+})();
+
+</script>
+<!-- počítadlo návštev (GoatCounter – bez cookies) -->
+<script data-goatcounter="https://barborasmeringaiova.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

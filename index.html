@@ -478,55 +478,153 @@ nav{background:rgba(248,247,244,.94)}
 em{color:#9A7A3E}
 .dark em,.fair h3 em,.promo h2 em{color:var(--gold-soft)}
 
+/* ===================== TEST: KDE SA NACHÁDZAŠ ===================== */
+.quiz{background:linear-gradient(rgba(238,237,234,.52),rgba(238,237,234,.52)),var(--m-light) 55% 0/1000px}
+.calc.dark{background:linear-gradient(rgba(45,44,41,.62),rgba(31,30,27,.74)),var(--m-dark) 60% 20%/1000px}
+.quiz,.calc.dark{position:relative;z-index:2;margin-top:calc(-1*var(--e));
+  -webkit-mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat;
+  mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat}
+.qcard{position:relative;max-width:760px;margin:2.4rem auto 0;border-radius:20px;padding:34px 36px 30px;
+  background:linear-gradient(rgba(255,255,255,.62),rgba(255,255,255,.62)),var(--m-white) 30% 50%/800px;border:1px solid rgba(197,155,69,.6);box-shadow:0 30px 60px -40px rgba(31,30,27,.55)}
+.qcard::after{content:"";position:absolute;inset:8px;border:1px solid rgba(197,155,69,.32);border-radius:14px;pointer-events:none}
+.qtop{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+.qprog{display:flex;align-items:center;gap:14px;padding-left:2px}
+.qprog i{width:11px;height:11px;transform:rotate(45deg);border:1.5px solid #B8954E;background:transparent;transition:background .3s}
+.qprog i.done{background:var(--brass)}
+.qprog i.now{box-shadow:0 0 0 4px rgba(214,178,108,.22)}
+.qstep{font-size:.84rem;font-weight:600;color:var(--soft)}
+.qq h3{font-size:clamp(1.25rem,2.4vw,1.55rem);line-height:1.25;margin:0 0 18px}
+.qopts{display:grid;gap:10px}
+.qopt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:15px 18px;border-radius:14px;cursor:pointer;
+  font:600 .98rem/1.4 var(--font);color:var(--ink);background:rgba(255,255,255,.82);border:1px solid rgba(184,149,78,.38);transition:border-color .2s,background .2s,transform .2s}
+.qopt::before{content:"";flex:none;width:10px;height:10px;transform:rotate(45deg);border:1.5px solid #B8954E;transition:background .2s}
+.qopt:hover{border-color:#B8954E;background:#fff}
+.qopt[aria-pressed="true"]{border-color:#B8954E;background:#F6EEDB}
+.qopt[aria-pressed="true"]::before{background:var(--brass)}
+.qopt:focus-visible{outline:2px solid #B8954E;outline-offset:2px}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:18px;min-height:24px}
+.qlink{background:none;border:0;padding:4px 0;font:600 .9rem var(--font);color:var(--soft);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.qlink:hover{color:var(--ink)}
+.qlink[hidden],.qnav[hidden]{display:none}
+.qres h3{font-size:clamp(1.45rem,3vw,1.95rem);line-height:1.2;margin:4px 0 12px}
+.qres .qkick{font-size:.84rem;font-weight:700;color:#9A7A3E;margin:0}
+.qres p{color:#4A4946;margin:0 0 14px}
+.qres ul{list-style:none;margin:6px 0 22px;padding:0;display:grid;gap:10px}
+.qres li{position:relative;padding-left:24px;color:#3A3936;font-size:.97rem}
+.qres li::before{content:"";position:absolute;left:3px;top:.55em;width:8px;height:8px;transform:rotate(45deg);background:var(--brass)}
+.qcta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.qfade{animation:qIn .35s ease both}
+@keyframes qIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ===================== KALKULAČKA ===================== */
+.ccard{margin-top:2.4rem;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:start;
+  border-radius:20px;padding:30px;background:rgba(18,17,15,.55);border:1px solid rgba(226,204,151,.32)}
+.cin label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:#D9D7D2;font-size:.95rem;font-weight:600;margin:0 0 10px}
+.cin output{color:#fff;font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+.cin input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;padding:0;margin:0 0 22px;border:0;background:transparent;cursor:pointer}
+.cin input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:999px;background:linear-gradient(90deg,#C9A55C 0 var(--p,30%),rgba(255,255,255,.18) var(--p,30%) 100%)}
+.cin input[type=range]::-moz-range-track{height:6px;border-radius:999px;background:rgba(255,255,255,.18)}
+.cin input[type=range]::-moz-range-progress{height:6px;border-radius:999px;background:#C9A55C}
+.cin input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;margin-top:-9px;border-radius:50%;background:var(--brass);border:3px solid #1F1E1B;box-shadow:0 0 0 1px rgba(226,204,151,.6)}
+.cin input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#D4B26C;border:3px solid #1F1E1B;box-shadow:0 0 0 1px rgba(226,204,151,.6)}
+.cin input[type=range]:focus-visible{outline:2px solid #D2B06A;outline-offset:4px;border-radius:8px}
+.cpaid{margin:4px 0 0;padding-top:16px;border-top:1px solid rgba(226,204,151,.22);color:#CFCDC8;font-size:.95rem}
+.cpaid b{display:block;color:#fff;font-size:1.7rem;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.cchart{margin:0;background:#1C1B19;border-radius:14px;padding:20px 20px 16px;position:relative}
+.cchart figcaption{color:#E9E7E2;font-weight:700;font-size:.98rem;margin:0 0 4px}
+.cchart .cunit{color:#A9A6A0;font-size:.82rem;margin:0 0 16px}
+.cplot{position:relative;padding-top:4px}
+.ckey{display:flex;align-items:center;gap:8px;margin:-8px 0 16px;color:#D9D7D2;font-size:.82rem;font-weight:600}
+.ckey i{width:0;height:16px;border-left:2px solid #F2EFE8}
+.ctick{position:absolute;top:-4px;height:28px;width:0;border-left:2px solid #F2EFE8;z-index:1;pointer-events:none;transition:left .35s ease}
+.crow{margin:0 0 16px}
+.crow:last-child{margin-bottom:4px}
+.cname{display:block;color:#E9E7E2;font-size:.9rem;font-weight:600;line-height:1.3;margin:0 0 6px}
+.cname small{display:block;color:#A9A6A0;font-weight:500;font-size:.78rem}
+.cbarwrap{position:relative;height:20px}
+.cbar{position:absolute;left:0;top:0;height:20px;border-radius:0 4px 4px 0;background:#6E6B66;transition:width .35s ease;outline:none;cursor:default}
+.cbar.hi{background:#B88C2E}
+.cbar:focus-visible{box-shadow:0 0 0 2px #1C1B19,0 0 0 4px #E2CC97}
+.cbar:hover{filter:brightness(1.12)}
+.cval{position:absolute;top:50%;transform:translateY(-50%);white-space:nowrap;color:#fff;font-weight:700;font-size:.92rem;transition:left .35s ease;pointer-events:none;z-index:2;background:#1C1B19;padding:5px 6px;border-radius:4px;line-height:1.2}
+.ctip{position:absolute;z-index:5;pointer-events:none;min-width:190px;max-width:240px;background:#F7F5F0;color:#1F1E1B;border-radius:10px;padding:10px 12px;font-size:.82rem;line-height:1.4;box-shadow:0 12px 30px -10px rgba(0,0,0,.6);opacity:0;transition:opacity .15s}
+.ctip.on{opacity:1}
+.ctip b{display:block;font-size:1rem;font-weight:800}
+.ctable{margin-top:10px}
+.ctable summary{cursor:pointer;color:#CFCDC8;font-size:.84rem;font-weight:600;padding:6px 0}
+.ctable table{width:100%;border-collapse:collapse;margin-top:6px;font-size:.84rem;color:#E9E7E2;font-variant-numeric:tabular-nums}
+.ctable th,.ctable td{padding:7px 6px;border-bottom:1px solid rgba(255,255,255,.1);text-align:right}
+.ctable th:first-child,.ctable td:first-child{text-align:left}
+.ctable th{color:#A9A6A0;font-weight:600}
+.cinsight{grid-column:1/-1;margin:0;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(226,204,151,.2);color:#E9E7E2;font-size:1rem}
+.cinsight b{color:#fff}
+.cshort{margin-top:22px;display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:center;border-radius:20px;padding:26px 30px;
+  background:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),var(--m-white) 70% 30%/800px;border:1px solid rgba(197,155,69,.6);color:var(--ink)}
+.cshort h3{color:var(--em-900);margin:0 0 6px;font-size:1.25rem}
+.cshort p{margin:0;color:#4A4946}
+.cnote{margin:18px 0 0;font-size:.8rem;line-height:1.6;color:#BDBAB4;max-width:900px}
+
+.herotest{margin:16px 0 0;font-size:.95rem;color:#D4D3D0}
+.herotest a{color:#F0E2BC;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.herotest a:hover{color:#fff}
+
+@media(max-width:900px){
+  .ccard{grid-template-columns:1fr}
+  .cshort{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .quiz,.calc.dark{background-size:auto,760px}
+  .qcard{padding:24px 18px 20px}
+  .qcard::after{inset:6px;border-radius:12px}
+  .qopt{padding:13px 14px;font-size:.93rem}
+  .ccard{padding:18px;gap:20px}
+  .cchart{padding:16px 14px 12px}
+  .cshort{padding:22px 20px}
+  .cshort .btn{width:100%;justify-content:center}
+  .qcta .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.qfade{animation:none}.cbar,.cval{transition:none}}
+
+/* ===================== CITÁT ===================== */
+.saying{background:linear-gradient(rgba(238,237,234,.5),rgba(238,237,234,.5)),var(--m-light) 20% 0/1000px;position:relative;z-index:2;margin-top:calc(-1*var(--e));
+  -webkit-mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat;
+  mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat}
+.quoteband{margin:0 auto;max-width:960px}
+.quoteband .lz{display:block;width:14px;height:14px;transform:rotate(45deg);background:var(--brass);margin:0 0 26px 3px}
+.quoteband blockquote{margin:0}
+.quoteband blockquote p{margin:0;font-weight:800;font-size:clamp(1.75rem,4.2vw,3.15rem);line-height:1.14;letter-spacing:-.025em;color:var(--em-900);text-wrap:balance}
+.quoteband blockquote em{color:#9A7A3E}
+.quoteband figcaption{display:flex;align-items:center;gap:12px;margin:26px 0 0;font-weight:700;color:#5E5D5A;font-size:.98rem}
+.quoteband figcaption::before{content:"";width:34px;height:2px;background:var(--brass)}
+.saying-sub{margin:22px 0 0;max-width:640px;color:#5E5D5A;font-size:1.06rem}
+@media(max-width:600px){.saying{background-size:auto,760px}.quoteband .lz{width:11px;height:11px;margin-bottom:20px}}
+
+/* menu: s odkazom Test sa na užších obrazovkách zmenšia medzery, nič sa nezalomí */
+@media(min-width:901px){nav .logo,nav .links a{white-space:nowrap}}
+@media(min-width:901px) and (max-width:1000px){nav .links{gap:14px}}
+
 /* ===================== BEZ PROMA ===================== */
 nav{top:0}
 /* album pokračuje rovno do formulára – len jeden preliv (formulár sa vlieva do albumu) */
-.noevent .album.dark{margin-bottom:0;
+.album.dark{margin-bottom:0;
   -webkit-mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat;
   mask:url(images/blend-top.webp) top/var(--ew) var(--e) repeat-x,linear-gradient(#000,#000) bottom/100% calc(100% - var(--e) + 1px) no-repeat}
 
-/* ===================== ONLINE EVENT ===================== */
-.event .promo{padding:56px 30px}
-.event .promo h2{margin-bottom:.6rem}
-.evdays{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:640px;margin:0 auto 22px;position:relative}
-.evday{border-radius:16px;padding:16px 18px;text-align:left;background:rgba(255,255,255,.07);border:1px solid rgba(226,204,151,.35)}
-.evday b{display:block;color:var(--gold-soft);font-size:1.12rem;font-weight:800;letter-spacing:-.01em}
-.evday span{display:block;color:#E9E7E2;font-size:.93rem;line-height:1.45;margin-top:2px}
-.evthemes{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 20px;color:#fff;font-weight:700;margin:0 0 26px;position:relative}
-.evthemes span{display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
-.evthemes i{width:7px;height:7px;transform:rotate(45deg);background:var(--brass)}
-.event .promo .evnote{font-size:.86rem;color:#CFCDC8;max-width:520px;margin:18px auto 0}
-.qev{margin:16px 0 0 !important;font-size:.95rem}
-.qev a{color:#7A5F2B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-@media(max-width:600px){.evdays{grid-template-columns:1fr}.event .promo{padding:40px 18px}.event .promo .btn{width:100%;justify-content:center}}
-
-/* ===================== LIŠTA S EVENTOM + REGISTRÁCIA ===================== */
-.evbar{position:fixed;top:0;left:0;right:0;z-index:51;background:var(--brass);color:#1F1E1B;text-align:center;font-size:.86rem;font-weight:600;line-height:1.35;padding:8px 14px}
-.evbar b{font-weight:800}
-.evbar a{color:#1F1E1B;font-weight:800;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;margin-left:4px}
-.evbar a:focus-visible{outline:2px solid #1F1E1B;outline-offset:2px;border-radius:3px}
+/* ===================== SKOK NA SEKCIU (pod menu) ===================== */
 section{scroll-margin-top:90px}
-#registracia{scroll-margin-top:160px}
-.evsteps{list-style:none;counter-reset:ev;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:760px;margin:0 auto 26px;padding:0;position:relative;text-align:left}
-.evsteps li{counter-increment:ev;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(226,204,151,.22);color:#E9E7E2;font-size:.9rem;line-height:1.35}
-.evsteps li::before{content:counter(ev);flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--brass);color:#1F1E1B;font-weight:800;font-size:.9rem}
-.evreg{margin:0 0 12px !important;color:var(--gold-soft);font-weight:700;font-size:1rem;position:relative}
-.evbar .evs{display:none}
-@media(max-width:600px){.evbar{font-size:.8rem;padding:7px 12px}.evbar .evl{display:none}.evbar .evs{display:inline}.evsteps{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 
-<div class="evbar" id="eventBar" data-event><b>Evento online gratuito</b> <span class="evl">The Future Is NOW – 14 e 15 novembre.</span><span class="evs">14 e 15 novembre</span> <a href="#registracia">Registrati</a></div>
 <nav>
   <div class="wrap">
     <a href="#top" class="logo">Barbora Šmeringaiová</a>
     <div class="links">
-      <a href="#registracia" data-event>Evento</a>
       <a href="#chi-sono">Chi sono</a>
       <a href="#business">Business</a>
       <a href="#percorso">Percorso</a>
+      <a href="#test">Test</a>
       <a href="#album">Album</a>
       <a class="lang" href="https://barboras22.github.io/barborasmeringaiova/" hreflang="sk" lang="sk" aria-label="Slovenská verzia"><span class="fl" aria-hidden="true">🇸🇰</span><span class="lc">SK</span></a>
       <a class="ig" href="https://www.instagram.com/barbora.smeringai/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 3.8c2.7 0 3 0 4 .1 2.7.1 4 1.4 4.1 4.1.1 1 .1 1.4.1 4s0 3-.1 4c-.1 2.7-1.4 4-4.1 4.1-1 .1-1.4.1-4 .1s-3 0-4-.1c-2.7-.1-4-1.4-4.1-4.1-.1-1-.1-1.4-.1-4s0-3 .1-4C3.9 5.3 5.3 3.9 8 3.9c1-.1 1.4-.1 4-.1zM12 2c-2.7 0-3.1 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 8.9 2 9.3 2 12s0 3.1.1 4.1c.2 3.6 2.2 5.7 5.8 5.8 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c3.6-.2 5.7-2.2 5.8-5.8.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c-.2-3.6-2.2-5.7-5.8-5.8C15.1 2 14.7 2 12 2z"/></svg></a>
@@ -549,6 +647,7 @@ section{scroll-margin-top:90px}
         <a href="#modulo" class="btn gold">Voglio più informazioni</a>
         <a href="https://www.instagram.com/barbora.smeringai/" target="_blank" rel="noopener" class="btn ghost">Il mio Instagram</a>
       </div>
+      <p class="herotest">Non sai da dove iniziare? <a href="#test">Fai un test veloce di 30 secondi</a></p>
       <p class="visits" id="visits" hidden><span class="pulse" aria-hidden="true"></span><span><b id="visits-n"></b> <span id="visits-t">persone hanno già visitato questa pagina</span></span></p>
     </div>
     <div class="arch reveal">
@@ -655,6 +754,81 @@ section{scroll-margin-top:90px}
   </div>
 </section>
 
+<!-- ============ TEST: A CHE PUNTO SEI ============ -->
+<section id="test" class="quiz">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Test veloce</span>
+      <h2 class="sec-title">Tu <em>a che punto sei?</em></h2>
+      <p class="sub">Quattro domande e 30 secondi, senza nome né e-mail. Alla fine vedrai cosa potrebbe aiutarti – e, se vuoi, mi mandi il risultato su WhatsApp.</p>
+    </div>
+    <div class="qcard reveal" id="quiz">
+      <div class="qtop">
+        <div class="qprog" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <span class="qstep" id="qstep" aria-live="polite"></span>
+      </div>
+      <div id="qbody"></div>
+      <div class="qnav"><button type="button" class="qlink" id="qback" hidden>Indietro</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCOLATORE ============ -->
+<section id="calcolatore" class="calc dark">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Calcolatore</span>
+      <h2 class="sec-title">Cosa fa il tempo ai tuoi <em>soldi?</em></h2>
+      <p class="sub">Sposta l'importo e gli anni. Vedrai quanto varranno i tuoi soldi a prezzi di oggi – cioè cosa potrai davvero comprarci, tenendo conto dell'inflazione.</p>
+    </div>
+    <div class="ccard reveal">
+      <div class="cin">
+        <label for="c-m">Ogni mese metto da parte <output id="c-m-out" for="c-m">100 €</output></label>
+        <input type="range" id="c-m" min="25" max="1000" step="25" value="100">
+        <label for="c-y">Per <output id="c-y-out" for="c-y">15 anni</output></label>
+        <input type="range" id="c-y" min="1" max="30" step="1" value="15">
+        <p class="cpaid">In totale versi <b id="c-paid">18.000 €</b></p>
+      </div>
+      <figure class="cchart" id="c-chart">
+        <figcaption id="c-cap">Valore dopo 15 anni</figcaption>
+        <p class="cunit">a prezzi di oggi, al netto dell'inflazione</p>
+        <p class="ckey"><i aria-hidden="true"></i><span id="c-key">versato in totale 18.000 €</span></p>
+        <div class="cplot" id="c-plot">
+          <div class="crow"><span class="cname">A casa o sul conto corrente<small>senza interessi</small></span><div class="cbarwrap"><div class="cbar" id="c-b0" tabindex="0" role="img"></div><i class="ctick" aria-hidden="true"></i><span class="cval" id="c-v0"></span></div></div>
+          <div class="crow"><span class="cname">Conto deposito in banca<small>interesse del 2,5% annuo</small></span><div class="cbarwrap"><div class="cbar" id="c-b1" tabindex="0" role="img"></div><i class="ctick" aria-hidden="true"></i><span class="cval" id="c-v1"></span></div></div>
+          <div class="crow"><span class="cname">Investimento a lungo termine<small>azioni mondiali, media storica del 5,2% annuo oltre l'inflazione</small></span><div class="cbarwrap"><div class="cbar hi" id="c-b2" tabindex="0" role="img"></div><i class="ctick" aria-hidden="true"></i><span class="cval" id="c-v2"></span></div></div>
+          <div class="ctip" id="c-tip" role="tooltip"></div>
+        </div>
+        <details class="ctable"><summary>Mostra come tabella</summary>
+          <table><thead><tr><th>Opzione</th><th>A prezzi di oggi</th><th id="c-th-nom">In euro tra 15 anni</th></tr></thead>
+          <tbody id="c-tbody"></tbody></table>
+        </details>
+      </figure>
+      <p class="cinsight" id="c-insight"></p>
+    </div>
+    <div class="cshort reveal">
+      <div>
+        <h3>E nel breve periodo?</h3>
+        <p>Nel trading di breve periodo il rendimento non si può calcolare in anticipo – può arrivare un guadagno, ma anche una perdita. Per questo qui non ti prometto nessun numero. Come funziona e come imparare a gestire il rischio te lo mostro di persona.</p>
+      </div>
+      <a class="btn gold" href="#modulo">Scrivimi</a>
+    </div>
+    <p class="cnote">Ipotesi del calcolo: inflazione del 3% annuo, un'ipotesi prudente (in Italia a ottobre 2026 è stata del 5,5% secondo l'ISTAT); conto deposito al 2,5% annuo (a novembre 2026 i conti deposito in Italia offrono circa dal 2 al 4% lordo, a seconda del vincolo); azioni mondiali al 5,2% annuo oltre l'inflazione – media degli anni 1900–2024 secondo l'UBS Global Investment Returns Yearbook 2025. Versamento sempre a fine mese, senza costi né tasse. È un calcolo a scopo illustrativo, non una raccomandazione d'investimento né una promessa di rendimento: i rendimenti passati non garantiscono quelli futuri e investire comporta il rischio di perdita.</p>
+  </div>
+</section>
+
+<!-- ============ CITAZIONE: NON SOLO SOLDI ============ -->
+<section id="citazione" class="saying">
+  <div class="wrap">
+    <figure class="quoteband reveal">
+      <span class="lz" aria-hidden="true"></span>
+      <blockquote><p>«I soldi sono solo una parte della storia. La parte più grande è <em>chi diventi lungo la strada</em> – e&nbsp;con&nbsp;chi la percorri.»</p></blockquote>
+      <figcaption>Barbora Šmeringaiová</figcaption>
+      <p class="saying-sub">Non si tratta solo di investire. Si tratta anche di crescita personale e delle persone di cui ti circondi – persone con i tuoi stessi obiettivi e valori, che ti spingono a dare il meglio.</p>
+    </figure>
+  </div>
+</section>
+
 <!-- ============ ANCORA INDECISO/A? ============ -->
 <section id="dubbi" class="doubts dark">
   <div class="wrap">
@@ -719,42 +893,6 @@ section{scroll-margin-top:90px}
   <p id="lbcap"></p>
 </div>
 
-<!-- ============ ONLINE EVENT ============ -->
-<section id="event" class="promo-sec event" data-event>
-  <div class="wrap">
-    <div class="promo reveal" id="registracia">
-      <span class="eyebrow">Evento online gratuito</span>
-      <h2>The Future Is NOW – <em>14 e 15 novembre</em></h2>
-      <p>Due pomeriggi di educazione finanziaria in diretta da Dubai. Ti colleghi da dove vuoi – dal telefono o dal computer – e l’ingresso è gratuito.</p>
-      <div class="evdays">
-        <div class="evday"><b>14/11 · 15:00 – 19:00</b><span>Scopri cosa è possibile</span></div>
-        <div class="evday"><b>15/11 · 15:00 – 19:00</b><span>Prendi il controllo del tuo futuro finanziario</span></div>
-      </div>
-      <p class="evthemes"><span><i aria-hidden="true"></i>Guadagnare</span><span><i aria-hidden="true"></i>Proteggere</span><span><i aria-hidden="true"></i>Far crescere</span></p>
-      <p class="evreg">Registrazione gratuita in 3 passi</p>
-      <ol class="evsteps"><li>Clicca sul pulsante qui sotto</li><li>Inserisci nome, e-mail e numero WhatsApp</li><li>Il biglietto ti arriva via e-mail</li></ol>
-      <a class="btn gold" href="https://futureisnowevent.com/glowup/barbora-smeringaiova" target="_blank" rel="noopener">Registrati gratis</a>
-      <p class="evnote">Gli orari sono in ora italiana. Il biglietto ti arriva via e-mail. Per l’accesso VIP del secondo giorno scrivimi su WhatsApp.</p>
-    </div>
-  </div>
-</section>
-<script>
-window.EVENT_URL = "https://futureisnowevent.com/glowup/barbora-smeringaiova";
-window.EVENT_END = new Date("2026-11-15T19:00:00+01:00");
-document.addEventListener("DOMContentLoaded", function () {
-  var eb = document.querySelector("#eventBar a"); if (eb) eb.addEventListener("click", function () { try { if (window.goatcounter && goatcounter.count) goatcounter.count({path: "event-lista-klik", title: "event-lista-klik", event: true}); } catch (e) {} });
-  document.querySelectorAll('a[href^="https://futureisnowevent.com"]').forEach(function (a) {
-    a.addEventListener("click", function () { try { if (window.goatcounter && goatcounter.count) goatcounter.count({path: "event-klik", title: "event-klik", event: true}); } catch (e) {} });
-  });
-  if (new Date() < window.EVENT_END) return;
-  document.querySelectorAll("[data-event]").forEach(function (e) { e.remove(); });
-  document.documentElement.classList.add("noevent");
-  fitBar();
-});
-function fitBar() { var b = document.getElementById("eventBar"); document.querySelector("nav").style.top = (b ? b.offsetHeight : 0) + "px"; }
-document.addEventListener("DOMContentLoaded", fitBar); window.addEventListener("load", fitBar); window.addEventListener("resize", fitBar);
-</script>
-
 <!-- ============ MODULO ============ -->
 <section id="modulo" class="inquiry">
   <div class="wrap two">
@@ -780,7 +918,7 @@ document.addEventListener("DOMContentLoaded", fitBar); window.addEventListener("
       </div>
       <div class="row">
         <div><label for="i">Cosa ti interessa?</label>
-          <select id="i"><option>Business online</option><option>Educazione finanziaria</option><option>Trading e investimenti</option><option>Collaborazione nel team</option><option data-event>Evento online The Future Is NOW (14–15/11)</option><option>Non lo so ancora, voglio info</option></select></div>
+          <select id="i"><option>Business online</option><option>Educazione finanziaria</option><option>Trading e investimenti</option><option>Collaborazione nel team</option><option>Non lo so ancora, voglio info</option></select></div>
         <div><label for="u">La tua esperienza</label>
           <select id="u"><option>Parto da zero</option><option>Ho le basi, voglio di più</option><option>Faccio già qualcosa</option></select></div>
       </div>
@@ -901,6 +1039,149 @@ Perché: ${v('w')}`;
       document.getElementById("visits-t").textContent = n === 1 ? "persona ha già visitato questa pagina" : "persone hanno già visitato questa pagina";
       document.getElementById("visits").hidden = false;
     });
+})();
+</script>
+<script>
+/* ===================== TEST: A CHE PUNTO SEI ===================== */
+(function(){
+  const WA = "393447611995";
+  const Q = [
+    {q: "Cosa ti descrive meglio in questo momento?", key: "La mia situazione", a: [
+      "Lavoro, ma a fine mese non mi resta quasi niente.",
+      "Riesco a mettere qualcosa da parte, ma i soldi restano fermi in banca.",
+      "Voglio qualcosa di mio, ma non so da dove iniziare.",
+      "Ho già provato qualcosa, ma senza risultati."]},
+    {q: "Quanto tempo a settimana potresti dedicarci?", key: "Tempo a settimana", a: [
+      "Meno di 3 ore", "Da 3 a 7 ore", "Più di 7 ore"]},
+    {q: "Cosa ti interessa di più?", key: "Mi interessa", a: [
+      "Capire come funzionano i soldi", "Costruire un patrimonio nel lungo periodo", "Trading e opportunità di breve periodo", "Un'entrata extra accanto al lavoro"]},
+    {q: "Cosa ti ha frenato di più finora?", key: "Finora mi ha frenato", a: [
+      "Non sapevo di chi fidarmi", "Non avevo tempo", "La paura di perdere soldi", "Non avevo nessuno che mi guidasse"]}
+  ];
+  const R = [
+    ["Lavori, ma i soldi ti scivolano tra le dita.", "Ci siamo passati quasi tutti – anch'io. Il primo passo non è guadagnare subito di più, ma capire dove vanno i soldi e imparare a gestirli."],
+    ["Risparmi – ma i tuoi soldi dormono.", "È bello che tu riesca a mettere qualcosa da parte. Però in banca, con interessi bassi, l'inflazione si mangia piano piano il loro valore. Qui sotto, nel calcolatore, vedi che differenza fa."],
+    ["La voglia c'è, ti manca solo la mappa.", "La cosa più difficile è sapere da dove iniziare. Ed è proprio a questo che serve un piano fatto insieme – passo dopo passo, senza dover sapere tutto subito."],
+    ["Non hai mollato – ti mancava solo un metodo.", "Se qualcosa non ha funzionato, non vuol dire che sia impossibile. Spesso manca solo un percorso chiaro e qualcuno che ti sostenga quando le cose non vanno."]
+  ];
+  const T2 = ["Bastano anche poche ore a settimana per iniziare a imparare – conta la costanza.",
+              "Da 3 a 7 ore a settimana sono una buona base per imparare e crescere passo dopo passo.",
+              "Con più di 7 ore a settimana puoi crescere più in fretta – e io ti aiuto a usare bene quel tempo."];
+  const T3 = ["Vuoi capire come funzionano i soldi – ed è proprio da lì che ha senso partire.",
+              "Ti interessa costruire un patrimonio nel lungo periodo – guarda qui sotto nel calcolatore cosa fa il tempo ai soldi.",
+              "Ti interessa il trading – ti mostro di persona come funziona, rischi compresi, senza promesse.",
+              "Ti interessa un'entrata extra accanto al lavoro – parliamo di come funziona in pratica e di cosa comporta."];
+  const T4 = ["E la fiducia? Non devi decidere niente subito – prima parliamo e verifichi tutto da solo/a.",
+              "E il tempo? È tutto online e si fa anche accanto al lavoro – con i tuoi ritmi.",
+              "La paura è normale. Parleremo anche dei rischi, non solo dei risultati.",
+              "E il fatto che nessuno ti abbia guidato/a può cambiare – ti garantisco il mio supporto e il mio aiuto."];
+  const ans = [];
+  let i = 0;
+  const body = document.getElementById("qbody"), step = document.getElementById("qstep"), back = document.getElementById("qback");
+  const marks = [...document.querySelectorAll("#quiz .qprog i")];
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const track = p => { try { if (window.goatcounter && goatcounter.count) goatcounter.count({path: p, title: p, event: true}); } catch(e) {} };
+  function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function progress(){ marks.forEach((m, k) => { m.classList.toggle("done", k < i || i >= Q.length); m.classList.toggle("now", k === i); }); }
+  function show(focus){
+    body.textContent = ""; progress();
+    if (i >= Q.length) return result(focus);
+    step.textContent = "Domanda " + (i + 1) + " di " + Q.length;
+    back.hidden = i === 0; back.parentNode.hidden = i === 0;
+    const wrap = el("div", "qq qfade"), h = el("h3", null, Q[i].q); h.tabIndex = -1; wrap.appendChild(h);
+    const box = el("div", "qopts"); box.setAttribute("role", "group"); box.setAttribute("aria-label", Q[i].q);
+    Q[i].a.forEach((t, k) => {
+      const b = el("button", "qopt", t); b.type = "button"; b.setAttribute("aria-pressed", ans[i] === k ? "true" : "false");
+      b.onclick = () => { ans[i] = k; b.setAttribute("aria-pressed", "true"); setTimeout(() => { i++; show(true); }, reduce ? 0 : 220); };
+      box.appendChild(b);
+    });
+    wrap.appendChild(box); body.appendChild(wrap);
+    if (focus) h.focus({preventScroll: true});
+  }
+  function result(focus){
+    step.textContent = "Fatto"; back.hidden = true; back.parentNode.hidden = true;
+    const r = R[ans[0]], wrap = el("div", "qres qfade");
+    wrap.appendChild(el("p", "qkick", "Il tuo risultato"));
+    const h = el("h3", null, r[0]); h.tabIndex = -1; wrap.appendChild(h);
+    wrap.appendChild(el("p", null, r[1]));
+    const ul = el("ul"); [T2[ans[1]], T3[ans[2]], T4[ans[3]]].forEach(t => ul.appendChild(el("li", null, t))); wrap.appendChild(ul);
+    const msg = "Ciao Barbora, ho fatto il test sulla tua pagina ✨\n" + Q.map((q, k) => q.key + ": " + q.a[ans[k]]).join("\n") + "\nVorrei sapere come potrei iniziare.";
+    const cta = el("div", "qcta");
+    const wa = el("a", "btn gold", "Manda il risultato su WhatsApp"); wa.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg); wa.target = "_blank"; wa.rel = "noopener";
+    wa.addEventListener("click", () => track("test-whatsapp-it"));
+    const calc = el("a", "btn ghost", "Vedi il calcolatore"); calc.href = "#calcolatore";
+    cta.append(wa, calc); wrap.appendChild(cta);
+    const again = el("button", "qlink", "Ricomincia"); again.type = "button"; again.style.marginTop = "14px";
+    again.onclick = () => { ans.length = 0; i = 0; show(true); };
+    wrap.appendChild(again);
+    body.appendChild(wrap);
+    if (focus) h.focus({preventScroll: true});
+    track("test-dokonceny-it");
+  }
+  back.onclick = () => { if (i > 0) { i--; show(true); } };
+  show(false);
+})();
+
+/* ===================== CALCOLATORE ===================== */
+(function(){
+  const INFL = 0.03, BANK = 0.025, REAL_STOCKS = 0.052;
+  const NAMES = ["A casa o sul conto corrente", "Conto deposito in banca", "Investimento a lungo termine"];
+  const RATES = [0, BANK, (1 + REAL_STOCKS) * (1 + INFL) - 1];      // annui nominali
+  const eur = x => String(Math.round(x / 10) * 10).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " €";   // 6.450 € (punto anche nelle migliaia)
+  const $ = id => document.getElementById(id);
+  const m = $("c-m"), y = $("c-y");
+  const yrs = n => n + (n === 1 ? " anno" : " anni");
+  let used = false;
+  function fv(P, R, n){ const r = Math.pow(1 + R, 1/12) - 1; return r === 0 ? P * n : P * (Math.pow(1 + r, n) - 1) / r; }
+  function fill(inp){ inp.style.setProperty("--p", ((inp.value - inp.min) / (inp.max - inp.min) * 100) + "%"); }
+  function render(){
+    const P = +m.value, Y = +y.value, n = Y * 12, defl = Math.pow(1 + INFL, Y), paid = P * n;
+    const nom = RATES.map(R => fv(P, R, n)), real = nom.map(v => v / defl);
+    $("c-m-out").textContent = eur(P); $("c-y-out").textContent = yrs(Y);
+    m.setAttribute("aria-valuetext", eur(P) + " al mese"); y.setAttribute("aria-valuetext", yrs(Y));
+    $("c-paid").textContent = eur(paid);
+    $("c-cap").textContent = "Valore dopo " + yrs(Y);
+    $("c-th-nom").textContent = "In euro tra " + yrs(Y);
+    const max = Math.max(paid, ...real) / 0.74;
+    real.forEach((v, k) => {
+      const w = v / max * 100, bar = $("c-b" + k), val = $("c-v" + k);
+      bar.style.width = w + "%"; val.style.left = "calc(" + w + "% + 4px)"; val.textContent = eur(v);
+      bar.setAttribute("aria-label", NAMES[k] + ": " + eur(v) + " a prezzi di oggi, " + eur(nom[k]) + " in euro tra " + yrs(Y));
+      bar.dataset.tip = JSON.stringify([NAMES[k], eur(v), eur(nom[k]), yrs(Y)]);
+    });
+    const rp = paid / max * 100; document.querySelectorAll("#c-plot .ctick").forEach(t => t.style.left = "calc(" + rp + "% - 1px)"); $("c-key").textContent = "versato in totale " + eur(paid);
+    const tb = $("c-tbody"); tb.textContent = "";
+    [[ "Versato in totale", paid, paid ]].concat(real.map((v, k) => [NAMES[k], v, nom[k]])).forEach(r => {
+      const tr = document.createElement("tr");
+      [r[0], eur(r[1]), eur(r[2])].forEach(t => { const td = document.createElement("td"); td.textContent = t; tr.appendChild(td); });
+      tb.appendChild(tr);
+    });
+    const ins = $("c-insight"); ins.textContent = "";
+    const a = document.createTextNode("Se per " + yrs(Y) + " metti da parte " + eur(P) + " al mese a casa, i tuoi soldi perderanno circa ");
+    const b1 = document.createElement("b"); b1.textContent = eur(paid - real[0]);
+    const c = document.createTextNode(" del loro valore a prezzi di oggi. Con la media storica delle azioni mondiali varrebbero circa ");
+    const b2 = document.createElement("b"); b2.textContent = eur(real[2]);
+    const d = document.createTextNode(" – ma non è garantito: il risultato può essere più alto, più basso o anche una perdita.");
+    ins.append(a, b1, c, b2, d);
+    fill(m); fill(y);
+  }
+  [m, y].forEach(inp => inp.addEventListener("input", () => { render(); if (!used) { used = true; try { if (window.goatcounter && goatcounter.count) goatcounter.count({path: "kalkulacka-pouzita-it", title: "kalkulacka-pouzita-it", event: true}); } catch(e) {} } }));
+  const tip = $("c-tip"), plot = $("c-plot");
+  function showTip(bar){
+    const t = JSON.parse(bar.dataset.tip || "[]"); if (!t.length) return;
+    tip.textContent = "";
+    const s1 = document.createElement("span"); s1.textContent = t[0];
+    const b = document.createElement("b"); b.textContent = t[1];
+    const s2 = document.createElement("span"); s2.textContent = "a prezzi di oggi · " + t[2] + " in euro tra " + t[3];
+    tip.append(s1, b, s2);
+    const pr = plot.getBoundingClientRect(), br = bar.getBoundingClientRect();
+    let left = Math.min(br.right - pr.left + 8, pr.width - 200); left = Math.max(0, left);
+    tip.style.left = left + "px"; tip.style.top = (br.top - pr.top - 64) + "px"; tip.classList.add("on");
+  }
+  [0, 1, 2].forEach(k => { const bar = $("c-b" + k);
+    bar.addEventListener("pointerenter", () => showTip(bar)); bar.addEventListener("focus", () => showTip(bar));
+    bar.addEventListener("pointerleave", () => tip.classList.remove("on")); bar.addEventListener("blur", () => tip.classList.remove("on")); });
+  render();
 })();
 </script>
 <!-- počítadlo návštev (GoatCounter – bez cookies) -->
